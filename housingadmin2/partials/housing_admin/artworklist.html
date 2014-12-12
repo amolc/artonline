@@ -1,0 +1,19 @@
+
+<table class="table table-bordered">
+  		<tbody>
+  	<th>Name</th>
+  	<th>Title</th>		
+  	<th>Type</th>
+  	<th>Size</th>
+  	<th>Action</th>
+
+     <tr ng-repeat="artwork in artists">
+     <td>{{artwork.name}}</td>
+     <td>{{artwork.title}}</td>
+     <td>{{artwork.type}}</td>
+      <td>{{artwork.size}}</td>
+      <td><a href="#/app/artist/editartwork/{{artwork.id}}"> Edit</td>
+    </tr>
+    </tbody>
+
+    </table>

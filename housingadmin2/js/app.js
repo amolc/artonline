@@ -28,30 +28,40 @@ $stateProvider
             templateUrl: "partials/housing_admin/terms.html",
             controller : 'helpController'
         })
-        .state('app.konto', {
-            url: "/konto",
-            templateUrl: "partials/housing_admin/konto.html",
+        .state('app.artist', {
+            url: "/artist",
+            templateUrl: "partials/housing_admin/artist.html",
             controller : 'accountdetailsController'
         })       //asdfdsgfdgdfghdfghdf 
-        .state('app.konto.betalning', {
-            url: "/betalning",
-            templateUrl: "partials/housing_admin/betalning.html",
+        .state('app.artist.addartwork', {
+            url: "/addartwork",
+            templateUrl: "partials/housing_admin/addartwork.html",
             controller : 'accountdetailsController'
         })
-        .state('app.konto.pay', {
+        .state('app.artist.pay', {
             url: "/pay",
             templateUrl: "partials/housing_admin/payment.html",
             controller : 'paypalController'
         })
-        .state('app.konto.orders', {
-            url: "/orders",
-            templateUrl: "partials/housing_admin/orders.html",
+        .state('app.artist.listartist', {
+            url: "/listartist",
+            templateUrl: "partials/housing_admin/listartist.html",
+            controller : 'artistController'
+        })
+        .state('app.artist.editartist', {
+            url: "/editartist/:id",
+            templateUrl: "partials/housing_admin/editartist.html",
+            controller : 'editartistController'
+        })
+        .state('app.artist.artworklist', {
+            url: "/artworklist",
+            templateUrl: "partials/housing_admin/artworklist.html",
             controller : 'paymentController'
         })
-        .state('app.konto.lartwork', {
-            url: "/lartwork",
-            templateUrl: "partials/housing_admin/lartwork.html",
-            controller : 'paymentController'
+        .state('app.artist.editartwork', {
+            url: "/editartwork/:id",
+            templateUrl: "partials/housing_admin/editartwork.html",
+            controller : 'editartworkController'
         })
         .state('losenord', {
             url: "/losenord",

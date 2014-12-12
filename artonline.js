@@ -177,8 +177,12 @@ app.post('/api/pushnotification', push.iphonenotify);
 
 app.post('/api/addetails', addartist.addetails);
 app.post('/api/addartwork', addartist.addartwork);
-app.get('/api/getartist',addartist.getartist);
+app.get('/api/getartwork',addartist.getartwork);
+app.get('/api/getartists',addartist.getartists);
 
-
+app.get('/api/artworkdetails/:id',addartist.artworkdetails);
+app.post('/api/updateartwork', addartist.updateartwork);
+app.post('/api/updateartist', addartist.updateartist);
+app.get('/api/artistdetails/:id',addartist.artistdetails);
 app.listen(9000);
 console.log('Listening.. on port 9000...'); 
