@@ -68,30 +68,30 @@ $stateProvider
             templateUrl: "partials/housing_admin/losenord.html",
             controller : 'lostpasswordCtrl'
         })
-        .state('app.news', {
-            url: "/news",
-            templateUrl: "partials/housing_admin/newsbasic.html",
+        .state('app.collector', {
+            url: "/collector",
+            templateUrl: "partials/housing_admin/collector.html",
             abstract : true
             
         })
-        .state('app.news.list', {
-            url: "/list",
-            templateUrl: "partials/housing_admin/newsfeed.html",
+        .state('app.collector.collection', {
+            url: "/collection",
+            templateUrl: "partials/housing_admin/collection.html",
             //controller : 'newsfeedController'
         })
-        .state('app.news.new', {
-            url: "/new",
-            templateUrl: "partials/housing_admin/addnewsfeed.html",
-            controller : 'newsfeedController2'
+        .state('app.collector.acollector', {
+            url: "/acollector",
+            templateUrl: "partials/housing_admin/acollector.html",
+           // controller : 'newsfeedController2'
             
         })
-        .state('app.news.listcollector', {
+        .state('app.collector.listcollector', {
             url: "/listcollector",
             templateUrl: "partials/housing_admin/listcollector.html",
             controller : 'newsfeedController2'
             
         })
-        .state('app.news.listcollection', {
+        .state('app.collector.listcollection', {
             url: "/listcollection",
             templateUrl: "partials/housing_admin/listcollection.html",
             controller : 'newsfeedController2'
