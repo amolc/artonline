@@ -4,6 +4,8 @@ var db = mysql.createPool({
 	database : 'artonline',
      user : 'artonline',
 	password : '3cXWOqeaf',
+    /*user:'root',
+    password:'',  */
     host :'localhost',
  });
 
