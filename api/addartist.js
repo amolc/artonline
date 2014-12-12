@@ -69,7 +69,7 @@ exports.getartwork = function(req, res) {
 };
 
 exports.getartists = function(req, res) {
-    var housingid = req.params.hid; 
+  
     var query = "SELECT * FROM tbl_addartist";  
     db.query( query, function (err, val) {  
         res.jsonp(val);

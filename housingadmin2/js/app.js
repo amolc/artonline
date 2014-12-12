@@ -21,7 +21,7 @@ $stateProvider
         .state('app.home', {
             url: "/home",
             templateUrl: "partials/housing_admin/home.html",
-            controller : 'profileController'
+            //controller : 'profileController'
         })
         .state('app.terms', {
             url: "/terms",
@@ -31,8 +31,8 @@ $stateProvider
         .state('app.artist', {
             url: "/artist",
             templateUrl: "partials/housing_admin/artist.html",
-            controller : 'accountdetailsController'
-        })       //asdfdsgfdgdfghdfghdf 
+            controller : 'newartistController'
+        })       
         .state('app.artist.addartwork', {
             url: "/addartwork",
             templateUrl: "partials/housing_admin/addartwork.html",
@@ -102,18 +102,18 @@ $stateProvider
         .state('app.styrelsen', {
             url: "/styrelsen",
             templateUrl: "partials/housing_admin/styrelsen.html",
-            controller : 'boardcontactController'
+            //controller : 'boardcontactController'
         })
         .state('app.kontakter', {
             url: "/kontakter",
             templateUrl: "partials/housing_admin/kontakter.html",
-            controller:"contactController"
+            //controller:"contactController"
 
         })
         .state('app.kontakter.addcontact', {
             url: "/addcontact",
             templateUrl: "partials/housing_admin/addcontact.html",
-            controller:"contactController"
+            //controller:"contactController"
         })
         .state('app.kontakter.Kontakter_styrelsen', {
             url: "/Kontakter_styrelsen",
