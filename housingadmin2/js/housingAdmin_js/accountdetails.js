@@ -8,13 +8,31 @@ function newartistController( $rootScope, $scope, $http) {
 	};
 
 }
-function addartworkController( $rootScope, $scope, $http) {
-	
-	$scope.addArtwork = function(add1) {
-		$http.post(baseURL + 'addartwork', add1).success(function(res) {
-	 }) 
+function addartworkController( $rootScope, $scope, $http, $state ) {
+	$scope.selectedartist = { id : ''}
+	$scope.artists = {};
+	$http.get(baseURL + 'getartists').success(function(res) {
+		//$scope.artists = res;
+        if (res.status == 'false') {
+            console.log(res.message);
+        } else {
+            $scope.artists = res;
+            console.log( $scope.artists );
+        }
+    });
+
+	$scope.changeartist = function( artist_id ) {
+		$scope.selectedartist.id = artist_id;				
 	};
 
+	$scope.artwork = {};
+	$scope.addArtwork = function( artwork ) {
+		artwork.artist = $scope.selectedartist.id;
+		$http.post(baseURL + 'addartwork', artwork).success(function(res) {
+			if( res.status == true )
+				$state.go('app.artist.artworklist');
+	 	}) 
+	};
 
 }
 

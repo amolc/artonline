@@ -43,17 +43,23 @@ exports.addetails= function (req,res){
 	   	var type = req.body.type;
 	   	var size = req.body.size;
          var name = req.body.name;
-         console.log(name);   
-	   	console.log(title);
+             console.log(name);   
+    	   	console.log(title);
 
 
-addartworkCrud.create({name:name,title: title,type: type,size: size}, function (err, vals){
+    addartworkCrud.create({ name : '', artist:req.body.artist,title: title,type: type,size: size}, function (err, vals){
  		//	console.log(vals)
+      if( err ){
+        var resdata={
+          status:false,
+          message :'err'
+          };
+      } else {
+        var resdata={
+          status:true,          
+        };  
+      }			
  			
- 			var resdata={
- 	  		status:false,
- 	  		message :'err'
- 	  	};
 
  			res.jsonp(resdata);		
  		});
