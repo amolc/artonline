@@ -108,7 +108,7 @@ exports.updateartist = function(req, res) {
 
    var id=req.body.id;
     console.log(id);
-    console.log(req.body.title);
+    console.log(req.body.fname);
   addartistCrud.update({'id' : id}, {fname:req.body.fname,location:req.body.location,mobileno:req.body.mobileno,desc:req.body.desc}, function (err, vals) {
     if(parseInt(vals.affectedRows)>0){
         var resdata={status:true,
@@ -126,7 +126,7 @@ exports.updateartist = function(req, res) {
 exports.artistdetails = function(req, res) {
     var id=parseInt(req.params.id);
     console.log(id);
-      addartworkCrud.load({id:id}, function (err, val) {   
+      addartistCrud.load({id:id}, function (err, val) {   
         res.jsonp(val[0]);
       });  
  }; 

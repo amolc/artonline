@@ -193,7 +193,7 @@ function editartistController( $rootScope, $scope, $http,$stateParams) {
 								 
 			 	$scope.updateArtist=function(art){
 
-			$http.post(baseURL + 'updateartist', art).success(function(res) {
+			$http.post(baseURL + 'updateartist',art).success(function(res) {
 				$scope.response = res;
 				console.log(res);
 				if (res.status == false) {
@@ -206,3 +206,8 @@ function editartistController( $rootScope, $scope, $http,$stateParams) {
 			});
 		}
 		};
+
+
+
+
+
