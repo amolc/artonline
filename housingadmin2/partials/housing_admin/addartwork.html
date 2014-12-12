@@ -6,7 +6,7 @@
 			<div class="form-group" >
 		  		<label class="col-md-4" >Artist Name :</label>
 			  	<div  class="col-md-8" >
-               <input type="text" class="form-control" id="field-1" placeholder="Artist Name" ng-model='add1.name'>
+			  	<select class="form-control" ng-options="artist as artist.fname for artist in artists" ng-model="selectedartist" ng-change="changeartist( selectedartist.id )" ></select>
 			  	</div>
 	 		</div>
 
@@ -14,19 +14,19 @@
 	  		<div class="form-group" >
 		  		<label class="col-md-4" >Artwork Title :</label>
 			  	<div  class="col-md-8" >
-               <input type="text" class="form-control" id="field-1" placeholder="Artwork Title" ng-model='add1.title'>
+               <input type="text" class="form-control" id="field-1" placeholder="Artwork Title" ng-model='artwork.title'>
 			  	</div>
 	 		</div>
 	 		<div class="form-group" >
 		  		<label class="col-md-4" >Artwork Type :</label>
 			  	<div  class="col-md-8" >
-                <input type="text" class="form-control" id="field-1" placeholder="Artwork Type" ng-model='add1.type'>
+                <input type="text" class="form-control" id="field-1" placeholder="Artwork Type" ng-model='artwork.type'>
 			  	</div>
 	 		</div>
 	 		<div class="form-group" >
 		  		<label class="col-md-4" >Artwork Size :</label>
 			  	<div  class="col-md-8" >
-              <input type="text" class="form-control" id="field-1" placeholder="Artwork Size" ng-model='add1.size'>
+              <input type="text" class="form-control" id="field-1" placeholder="Artwork Size" ng-model='artwork.size'>
 			  	</div>
 	 		</div>
 	 		
@@ -35,7 +35,7 @@
 <div class="form-group" >
 		 
 			  	<div  class="col-md-3 " >
-                  <button type="submit" class="btn btn_back" ng-click='addArtwork(add1)'>ADD</button>
+                  <button type="submit" class="btn btn_back" ng-click='addArtwork(artwork)'>ADD</button>
 						</div>
 	 		</div>
 	
