@@ -8,9 +8,8 @@ function newartistController( $rootScope, $scope, $http) {
 	};
 
 }
-function accountdetailsController( $rootScope, $scope, $http) {
+function addartworkController( $rootScope, $scope, $http) {
 	
-
 	$scope.addArtwork = function(add1) {
 		$http.post(baseURL + 'addartwork', add1).success(function(res) {
 	 }) 
