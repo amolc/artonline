@@ -48,6 +48,11 @@ $stateProvider
             templateUrl: "partials/housing_admin/orders.html",
             controller : 'paymentController'
         })
+        .state('app.konto.lartwork', {
+            url: "/lartwork",
+            templateUrl: "partials/housing_admin/lartwork.html",
+            controller : 'paymentController'
+        })
         .state('losenord', {
             url: "/losenord",
             templateUrl: "partials/housing_admin/losenord.html",
