@@ -1,9 +1,15 @@
-function accountdetailsController( $rootScope, $scope, $http) {
-	$scope.addArtist = function(add) {
-		$http.post(baseURL + 'addetails', add).success(function(res) {
+function newartistController( $rootScope, $scope, $http) {
+	$scope.artist = {
+		mobileno : ''		
+	};
+	$scope.addArtist = function(artist) {
+		$http.post(baseURL + 'addetails', artist).success(function(res) {
 	 	})
 	};
 
+}
+function accountdetailsController( $rootScope, $scope, $http) {
+	
 
 	$scope.addArtwork = function(add1) {
 		$http.post(baseURL + 'addartwork', add1).success(function(res) {
