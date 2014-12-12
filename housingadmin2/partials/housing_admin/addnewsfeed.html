@@ -1,73 +1,47 @@
-
-        <div class="form-group" ng-if="logo!=''" >
-            <label class="col-md-3 noborder" ></label>
-            <div  class="col-md-9" >
-              <div id="ass_logo" > <img id="associationlogo" ng-src="logos/{{logo}}" /> </div>                                
+<div id="bred-crum" >
+      <a href="#/app/konto" >Collector</a> &gt; <a > Add Collectors </a>
+    </div>
+      <form class="form-horizontal source_sans_prosemibold" id="accountDetailsform">
+        <div class="form-group" >
+          <label class="col-md-4" >Collector Name :</label>
+          <div  class="col-md-8" >
+                   <input type="text" class="form-control" id="field-1" placeholder="Enter First name" ng-model='add.fname'>
+          </div>
+      </div>
+      <div class="form-group" >
+          <label class="col-md-4" >Location :</label>
+          <div  class="col-md-8" >
+                   <input type="text" class="form-control" id="field-1" placeholder="Location" ng-model='add.location'>
+          </div>
+      </div>
+      <div class="form-group" >
+          <label class="col-md-4" >Mobile Number :</label>
+          <div  class="col-md-8" >
+                   <input type="text" class="form-control" id="field-1" placeholder="Mobile No" ng-model='add.mobileno'>
+          </div>
+      </div>
+      <div class="form-group" >
+          <label class="col-md-4" >Email Address :</label>
+          <div  class="col-md-8" >
+                   <input type="text" class="form-control" id="field-1" placeholder="Email Address" ng-model='add.email'>
+          </div>
+      </div>
+      
+      <div class="form-group" >
+          <label class="col-md-4" >Collector Interest :</label>
+          <div  class="col-md-8" >
+                   <input type="text" class="form-control" id="field-1" placeholder="Artist Description" ng-model='add.artdes'>
+          </div>
+      </div>
+      
+<div class="form-group" >
+     
+          <div  class="col-md-3 " >
+                  <button type="submit" class="btn btn_back" ng-click='addArtist(add)'>ADD</button>
             </div>
-            <div class="clear"></div>
-        </div>        
-      
-        <div id="bred-crum">
-          <a >NYHETER </a> &gt; <a>Skriv en nyhet </a>
-          <div class="clear"></div>
-        </div>
-
-        
-          <form role="form" class="form-horizontal form-full">
-            <div class="form-group">
-              <label class="col-md-3">Skriv en nyhet</label>
-              <div class="col-md-9">
-          
-                    <div class="news-date">
-                      <span id="now-date"><input ng-model="addnewsfeed.date" value="{{addnewsfeed.date | date:'dd/MM/yyyy' }}" type="date" name="date"></span>
-                      
-                      <span id="date-dis">Kalender</span>
-                      <div class="clear"></div>
-                    </div>       
-
-                    <div class="form-group">
-                        <select ng-model="selectedItem" class="form-control"
-                            ng-options="item as item.cat_name for item in typeitems" ng-change="updateType( selectedItem.type_id )" ></select>
-                    </div>
-                    <div class="form-group">
-                        
-                            <input type="text" class="form-control" id="field-1" placeholder="Rubrik" ng-model='addnewsfeed.title' maxlength="22" style="width:170px;float:left;text-transform:inherit;">
-                            <a class="tooltip" >
-              <span> Rubriken måste tyvärr vara så här kort för att få plats i mobilnotiserna samt på endast en rad i mobilen.</span></a>
-                    </div>
-                    <div class="form-group">
-                        
-                            <textarea rows="5" cols="50" name="" id="field-1" placeholder="Meddelande..." ng-model='addnewsfeed.description' class="classic-textarea form-control"></textarea>
-                        
-                    </div>
-                    <div class="form-group">
-                        
-                                <button type="submit" class="btn btn_back add-button" ng-click='Validatenewsfeed(addnewsfeed)'>Publicera nyhet</button>
-                        
-                    </div>
-            
-              </div>
-            </div>  
-          </form>  
-       
-      
-
-
-<div class="modal fade bs-example-modal-sm" id="newsconfirmation">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Dubbelkolla gärna att nyheten är korrekt.</h4>
       </div>
-      <div class="modal-body">
-        <p>Nyheten kommer att skickas till alla medlemmars mobiltelefoner som en notis.</p>
-      </div>
-      <div class="modal-footer">
-        <button style="width:94px;" type="button" class="btn add-button" data-dismiss="modal">Stäng</button>
-        <button style="width:150px;" type="button" class="btn add-button" ng-click="Addnewsfeed( addnewsfeed )" >Publicera nyhet</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+  
 
+
+
+      </form>

@@ -77,11 +77,23 @@ $stateProvider
         .state('app.news.list', {
             url: "/list",
             templateUrl: "partials/housing_admin/newsfeed.html",
-            controller : 'newsfeedController'
+            //controller : 'newsfeedController'
         })
         .state('app.news.new', {
             url: "/new",
             templateUrl: "partials/housing_admin/addnewsfeed.html",
+            controller : 'newsfeedController2'
+            
+        })
+        .state('app.news.listcollector', {
+            url: "/listcollector",
+            templateUrl: "partials/housing_admin/listcollector.html",
+            controller : 'newsfeedController2'
+            
+        })
+        .state('app.news.listcollection', {
+            url: "/listcollection",
+            templateUrl: "partials/housing_admin/listcollection.html",
             controller : 'newsfeedController2'
             
         })
