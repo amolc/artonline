@@ -1,0 +1,118 @@
+<div ng-controller="helloController">
+  
+  <div id="main_wrapper">
+   <div class="landing_main"> 
+   <style type="text/css">
+
+   /* base classes */
+    .clear{ clear: both;}
+   .left { float: left;}
+   .right { float: right;}
+   .container{
+   margin:0 auto;
+   max-width:960px;
+   }
+
+
+
+   /* header */
+   header
+   {
+    background-color:#fa8185;
+    height:130px;
+}
+body{
+  padding: 0 auto;
+  margin: 0 auto;
+}
+.hellomain{
+  position: relative;
+top: 146px;
+}
+.container img{
+  margin: 0 auto;
+  padding-top: 20px;
+
+}
+.container h2{
+  color: #ac6061;
+  padding: 40px 0px 20px 0px;
+    font-weight: 100;
+    font-size: 48px;
+    font-family: 'source_sans_prosemibold';
+}
+.container #first,#second,.email,#last{
+  font-size: 16px;
+  color: #ac6061;
+  font-family: 'source_sans_prosemibold';
+}
+#email{
+border-radius: 6px;
+border: 2px solid #add6de;
+width: 300px;
+height: 35px;
+color: #c69192;
+float: left;
+font-size: 16px;
+font-family: 'source_sans_prosemibold';
+margin-bottom: 15px;
+}
+.button{
+border: none;
+outline: none;
+border-radius: 6px;
+background-color: #add6de;
+font-size: 16px;
+font-family: 'source_sans_prosemibold';
+width: 198px;
+height: 38px;
+color: #ac6061;
+margin-left: 10px;
+box-shadow: 5px 5px 0 0 #ac6061;
+}
+#last{
+  padding-top: 20px;
+}
+#last a{
+  padding-top: 30px;
+  color: #fa8185;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 3px;
+}
+@media (min-width: 768px){
+  .container #first,#second,.email,#last{ width: 30%; }
+}
+</style>
+	<header id="headtop">
+	 <div class="container">
+        <div>
+            <a href="javascript:;" ng-click="goto('Home');" ><img src="images/headerlogo.jpg"></a>        
+        </div>        
+    </div>  
+  </header >
+  <!--header close-->
+  <div class="hellomain">
+   <div class="container">
+
+  	 <h2>Hej!</h2>
+  	   <p id="first"> Efter det varma mottagandet vi fick för bostadsrättappen så jobbar vi för fullt för att få klar också   hyresrättappen.<br><br>
+  	   Lämna din email så blir du först att få 
+         reda på när den har blivit lanserad.
+       </p><br>
+       <form id="subscribefrom" >
+       <div class="email">
+       	 <label for="email">Email</label><br>
+            <input id="email" type="email" ng-model="guest.email" />        
+       </div>
+       
+      <button type="submit" class="button" ng-click="subscribe( guest )" >Meddela Mig!</button>     
+       </form>
+       
+       <p id="last">Länk till
+        den redan lanserade appen för bostadsrätter:<a href="#">www.bostadsrattappen.se</a></p>
+     </div>   	
+    </div>   
+  </div> 
+</div>  
+</div> 

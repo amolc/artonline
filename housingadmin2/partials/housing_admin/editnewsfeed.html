@@ -1,0 +1,90 @@
+<div id="rightback"></div>
+<div ng-controller="editnewsfeedController" class="container">
+<div class="row row-eq-height" >
+
+    <div class="col-md-2" >
+    <ul id="main-nav" >
+      <li><a ng-click="goto('Home')"> <img src="img/hem-white.png"  ><span>Hem</span></a></li>
+      <li><a ng-click="goto('Konto')"> <img src="img/konto-white.png" ><span>Konto</span></a></li>
+      <li class="active"><a ng-click="goto('Addnewsfeed')" ng-mouseenter="animatesubmenu()" > <img src="img/nyhter.png" ><span>Nyheter</span></a></li>
+      <li><a ng-click="goto('Styrelsen')"> <img src="img/sty-white.png" ><span>Till Styrelsen</span></a></li>
+      <li><a ng-click="goto('Kontakter')"> <img src="img/kontakter-white.png" ><span>Kontakter</span></a></li>
+      <li><a ng-click="goto('Help')"> <img src="img/help-white.png" ><span>Hjälp</span></a></li>
+      </ul>
+        
+  </div>
+  
+  <div  class="col-md-10"> 
+    <div class="row row-eq-height " >
+      <ul id="submenus" hide-me="addnewsfeed.isMenu" class="col-md-3 off" ng-mouseleave="animatesubmenu()" > 
+          <li class="submenu-slide" >
+            
+            <a ng-click="goto('Addnewsfeed')">Skriv en nyhet</a>
+          
+        </li>
+        <li class="submenu-slide"  >
+           <a ng-click="goto('Newsfeed')">Nyhetsarkivet</a>
+        </li>
+      </ul>      
+
+      <div class="col-md-9" id="main-content">
+        <div class="form-group" ng-if="logo!=''" >
+            <label class="col-md-3 noborder" ></label>
+            <div  class="col-md-9" >
+              <div id="ass_logo" > <img id="associationlogo" ng-src="logos/{{logo}}" /> </div>                                
+            </div>
+            <div class="clear"></div>
+        </div>        
+      
+        <div id="bred-crum">
+          <a >NYHETER </a> &gt; <a>Skriv en nyhet </a>
+          <div class="clear"></div>
+        </div>
+
+        
+          <form role="form" class="form-horizontal form-full">
+            <div class="form-group">
+              <label class="col-md-3">Skriv en nyhet</label>
+              <div class="col-md-9">
+          
+                    <div class="news-date">
+                      <span id="now-date"><input ng-model="addnewsfeed.date" value="{{addnewsfeed.date }}" type="date" name="date"></span>
+                      
+                      <span id="date-dis">Kalender</span>
+                      <div class="clear"></div>
+                    </div>       
+
+                    <div class="form-group">
+                        <select ng-model="selectedItem" class="form-control"
+                            ng-options="item as item.cat_name for item in typeitems" ></select>
+                    </div>
+                    <div class="form-group">
+                        
+                            <input type="text" class="form-control" id="field-1" placeholder="Rubrik" ng-model='addnewsfeed.title' maxlength="22">
+                    </div>
+                    <div class="form-group">
+                        
+                            <textarea rows="5" cols="50" name="" id="field-1" placeholder="Meddelande..." ng-model='addnewsfeed.description' class="classic-textarea form-control"></textarea>
+                        
+                    </div>
+                    <div class="form-group">
+                        
+    <button type="submit" class="btn btn_back add-button" ng-click='editnewsfeed(addnewsfeed)'>Publicera nyhet</button>
+                        
+                    </div>
+            
+              </div>
+            </div>  
+          </form>  
+       
+      </div>  
+    </div>  
+    <div>
+      
+    </div>
+    <!-- Footer --> 
+  </div>
+  
+</div>
+
+</div>

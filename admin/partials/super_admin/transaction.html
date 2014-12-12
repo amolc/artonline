@@ -1,0 +1,38 @@
+    <h2>trans</h2>
+    
+  <table class="table table-bordered table-striped datatable" id="table-2">
+  <thead>
+    <tr>
+
+      <th>OrderID</th>
+        <!--(<a href="" ng-click="predicate1 = '-state_name'; reverse=false">^</a>) -->
+      <th>Amount</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Status</th>                
+      <th>HousingID</th>
+      
+      
+    </tr>
+  </thead>
+  
+  <tbody>
+     <tr ng-repeat="trans in transactions | orderBy :predicate:reverse | startFrom:pagination.page* pagination.perPage | limitTo:pagination.perPage">
+     
+     <td>{{trans.orderID}}</td>
+      <td>{{trans.amount}}</td>
+      <td>{{trans.start_date|date:'dd/MM/yyyy'}}</td> 
+      <td>{{trans.end_date|date:'dd/MM/yyyy'}}</td>   
+      <td>{{trans.status}}</td> 
+      <td>{{trans.housingID}}</td> 
+      
+    </tr>
+    </tbody>
+    </table>
+    <div class="page_no">
+<button ng-hide="pagination.page == 0" ng-click="pagination.prevPage()">Previous</button>
+<span  ng-repeat="n in [] | range: pagination.numPages" ng-class="{current: n == pagination.page}">
+    <button  ng-click="pagination.toPageId(n)">{{n + 1}}</button>
+</span>
+   <button ng-hide="pagination.page + 1 >= pagination.numPages" ng-click="pagination.nextPage()">Next</button>
+</div>

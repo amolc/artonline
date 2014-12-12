@@ -1,0 +1,192 @@
+<div ng-controller="servicesController">
+<header class="logo-env"> 
+    <div class="container">
+        <div>
+            <a href="" ><img src="css/assets/images/new_logo.png"></a>
+        </div>
+        <div>            
+            <ul id="main-nav">
+                <li id="set-font"><a href="#">V�lkommen till admin-sidan...</a></li>
+            </ul>
+            <ul id="access-nav">    
+                <li id="set-font-logout"><a ng-click="logout()"> LOGGA UT </a></li>
+            </ul> 
+        </div>
+    </div>
+</header>
+    <div class="page-container">
+  <div class="sidebar-menu">
+    
+    <ul id="main-menu" class="" >
+      <!---<li class="opened active"  > <a id="imghem" href="" ng-click="showhide('sub_menu')"><span>Housing Admin action</span></a>--->
+       
+          <li class="opened active"> <a id="imgservices" ng-click="showhide('inner_submenu_state')"> <span>Services</span></a> 
+          	<ul id="inner_submenu_state" style="display:none;">
+		<li >
+			<a id="pad" ng-click="goto('Addservices')"><span>Add Services</span></a>
+		</li>
+		<li >
+			<a id="pad" ng-click="goto('Services')"><span>Manage Services</span></a>
+		</li>
+		</ul>
+          	</li>
+          	 <li class="opened active"> <a id="imgfeed" ng-click="showhide('inner_submenu_news')"> <span>News Feed</span></a> 
+          	<ul id="inner_submenu_news" style="display:none;">
+		<li >
+			<a id="pad" ng-click="goto('Addnewsfeed')"><span>Add News Feed</span></a>
+		</li>
+		<li>
+			<a  id="pad" ng-click="goto('Addnewsfeed')"><span>Manage News Feed</span></a>
+		</li>
+		</ul>
+          	</li>
+          	  	 <li class="opened active"> <a id="imgcontact" ng-click="showhide('inner_submenu_cont')"> <span>Contact</span></a> 
+          	<ul id="inner_submenu_cont" style="display:none;">
+		<li>
+			<a id="pad" ng-click="goto('Addcontact')"><span>Add contact</span></a>
+		</li>
+		<li>
+			<a id="pad" ng-click="goto('Contact')"><span>Manage contact</span></a>
+		</li>
+		</ul>
+          	</li>
+ 
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="row"> 
+      <!-- Profile Info and Notifications -->
+     <div class="col-md-6 clearfix">
+        <ul class="user-info pull-left pull-none-xsm">
+          <!-- Profile Info -->
+          <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right --> 
+         <a ng-model='adminusername' class="dropdown-toggle" data-toggle="dropdown"> Welcome to {{adminusername}}</a>                 
+          </li>
+        </ul>
+        <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+        </ul>
+      </div>
+      
+    </div>
+    <hr />
+    <div class="row"> </div>
+    <!--<h2 class="table_heading">SERVICES MANGEMENT</h2> 
+   <div class="add_btn_container"> 
+   	<button class="btn btn-success-service" type="button" ng-click="goto('Addservices')">Add Services</button>
+   </div>--->
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"> </div>
+          <table class="table table-bordered table-striped datatable" id="table-2">
+	<thead>
+		<tr>
+			
+			<th>Services name</th>
+			<th>Phone number</th>
+			<th>Email</th>
+			<th>Web Address</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="ser in services">
+			<td class="tddata">{{ser.Service_name}}</td>
+			<td class="tddata">{{ser.phone_number}}</td>
+				<td class="tddata">{{ser.Email}}</td>
+			<td class="tddata">{{ser.web_address}}</td>		
+			<td class="actiontd_service">
+				<a  id ="editimg" class="btn btn-default btn-sm btn-icon icon-left" ng-click='edit({{ser.services_id}})'>
+					
+					�ndra
+				</a>
+				
+				<a id ="deleteimg" class="btn btn-danger btn-sm btn-icon icon-left" ng-click='del({{ser.services_id}})'>
+					
+					Ta Bort
+				</a>
+				<a class="btn btn-info btn-sm btn-icon icon-left" ng-click='view({{ser.services_id}})'>
+					<i class="entypo-info"></i>
+					View
+				</a>
+			</td>
+		</tr>
+		</tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer --> 
+  </div>
+  <div id="chat" class="fixed" data-current-user="" data-order-by-status="1" data-max-chat-history="25">
+    <div class="chat-inner"> </div>
+    <!-- conversation template -->
+    <div class="chat-conversation">
+      <ul class="conversation-body">
+      </ul>
+    </div>
+  </div>
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+</div>
+<footer>
+  <div class="container">
+    <div>
+      <ul id="footer-access-nav">
+        <li><a href="#">HEM</a></li> 
+        <li><a href="#">SA FUNKAR DET</a></li>
+        <li><a href="#">HJALP</a></li> 
+        <li><a href="#">OM BOSTADSRATTAPPEN</a></li> 
+        <li><a href="#">LOGGA IN</a></li>
+        <li><a href="#">ANSLUT</a></li>
+      </ul>
+      <ul id="footer-access-nav-right">
+          <li><a href="#">Kotakta Oss</a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+    <div> 
+      <ul id="footer-access-nav-sub">
+        <li><a href="#">HEM</a></li> 
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+      <ul id="footer-access-nav-sub-right">
+        <li><a href="#"><img src="css/assets/images/logo1.jpg"></a></li> 
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+   <div id="copy">
+    Copyright   &copy;  2014 av Bostadsrättappen. Alla rättigheter förbehållna.
+    <div id="top">
+    <img src="css/assets/images/top.jpg" width="90px;" height="40px">
+   </div>
+   </div>
+
+  </div> 
+</footer>

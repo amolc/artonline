@@ -1,0 +1,91 @@
+		  	<div class="form-group" ng-if="logo!=''" >
+		  		<label class="col-md-4 noborder" ></label>
+			  	<div  class="col-md-8" >
+			  		<img id="associationlogo" ng-src="logos/{{logo}}" />
+			  	</div>
+			  	<div class="clear"></div>
+	 		</div>				
+		  	<div id="bred-crum">
+	 			<a ng-click="" >NYHETER </a> > <a > NYHETSARKIVET </a>
+	 		</div>
+	 		<div class="form-horizontal" >
+			  	<div class="form-group">
+				  	<ul class="pagination pull-right">
+						<li><a ng-hide="pagination.page == 0" href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+						<li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+					  		<a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+						</li>
+					  	<li><a ng-hide="pagination.page + 1 >= pagination.numPages" href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+					</ul>
+					  	
+
+		 			<label class="col-md-3" >Nyheter:</label>
+				  	<div class="col-md-12" >
+			<div ng-repeat="news in newsfeed | startFrom: pagination.page* pagination.perPage | limitTo:pagination.perPage"  class="row marginb30" ng-show="news.id" >
+				  		<div class="col-md-6" style="margin-top:15px;" >
+				  			<div class="source_sans_prolight lightpeach">{{news.date | date:'dd/MM/yyyy' }}</div>
+				  			<div class="source_sans_prosemibold lightgreen" >{{news.title}}</div>
+				  			<div class="source_sans_prolight lightgreen" >{{news.description}}</div>
+				  		</div>
+
+				  		<div  class="col-md-3" >
+				  			<!-- <a ng-click="edit({{news.id}})" ><img src="img/news_edit.jpg"></a> -->
+				  			<a ng-click="del(news)" ><img style="margin-top:30px;" ng-src="img/news_delete.jpg"></a>
+				  			</div>
+				  			<div class="col-md-3">
+				  			<a ng-click="printNews(news)" ><img style="margin-top:30px;" ng-src="img/print.png"></a>
+				  			<!-- <input type="image" style="margin-top:30px;" ng-src="img/print.png" onclick="window.print()"/> -->
+				  			</div>
+				  			</div>
+			 			</div>
+
+			 			<ul class="pagination pull-right">
+							<li><a ng-hide="pagination.page == 0" href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+							<li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+						  		<a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+							</li>
+						  	<li><a ng-hide="pagination.page + 1 >= pagination.numPages" href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+						</ul>
+						
+					</div>
+			  	</div>
+
+			
+  	
+
+  
+  
+
+  <!-- modal window  -->
+  <style type="text/css">
+  @media print {
+  	#printSection{ top: 0px; left: 0px; position: fixed;}
+  }
+  </style>
+  <div class="modal fade bs-example-modal-sm" id="printNews">
+	  <div class="modal-dialog">
+	    <div class="modal-content">	
+	      <div id="printHeader" >
+	      <div class="modal-header" style="border:0px;">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <img src="img/newsbanner.jpg" style="max-width:100%;" />
+	      </div>
+	      <div class="modal-body" >
+	      	<div style="text-align:center;"><img id="associationlogo" ng-src="logos/{{logo}}" /></div>
+	      	<h1 style="color:#59c0c7;font-size:30px;" class="source_sans_prosemibold lightgreen" >{{singleNews.title}}</h1>
+
+	        <h2 class="source_sans_prolight" style="font-size:15px;"><span class="lightpeach">DATUM :</span> {{singleNews.date | date:'yyyy-MM-dd' }}</h2>
+  			<div class="source_sans_prolight lightgreen" >{{singleNews.description}}</div>		
+  			<hr style="color:#fad7bc;border-color:#fad7bc;" />	
+  			<img src="img/sacncodes.jpg" style="max-width:100%;" />
+	      </div>
+	      </div>  
+	      <div class="modal-footer no-print" style="border:0px;">	        
+	        
+	        	<a print-directive print-element-id="printHeader" ><img ng-src="img/print.png"></a>
+	        
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+

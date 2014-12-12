@@ -1,0 +1,168 @@
+<header class="logo-env"> 
+   
+    <div class="container">
+        <div>
+            <a href="/icefire_web" ><img src="css/assets/images/new_logo.png"></a>
+        </div>
+        <div>            
+            
+                <p class="source_sans_prolight fontsize14 " style="color: #e1efe1">Välkommen till admin-sidan...</p>
+            
+            <ul id="access-nav" ng-controller="accessController">    
+                <li id="set-font-logout" ><a ng-click="logout()"> LOGGA UT </a></li>
+            </ul> 
+        </div>
+    </div>
+
+
+</header>
+<div id="content">
+<div id="rightback"></div>
+<div class="container" >
+<div class="row row-eq-height">
+	
+	<div class="col-md-2" >
+ 		<ul id="main-nav">
+			<li><a ng-class="{ active: isActive('/app/home')}" href="#/app/home">Hem</a></li>
+			<li><a ng-class="{ active: isActive('/app/konto')}" class="konto" href="#/app/konto">Artist</a></li>
+			<li><a ng-class="{ active: isActive('/app/news')}" class="news" href="#/app/news/new">Collector</a></li>
+			<li><a ng-class="{ active: isActive('/app/styrelsen')}" class="styrelsen" href="#/app/styrelsen" >Till styrelsen</a></li>
+			<li><a ng-class="{ active: isActive('/app/kontakter')}" class="kontakter" href="#/app/kontakter">Kontakter</a></li>
+			<li><a ng-class="{ active: isActive('/app/help')}" class="help" href="#/app/help">Hjälp</a></li>
+			
+			</ul>
+ 	</div>
+  
+  <div class="col-md-10" ui-view> 
+  	<div id="main-content" >
+  			<form class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">
+		  	<div class="form-group" style="margin-bottom:50px;">
+		  		<label class="col-md-3" style="margin-top:13px;">Föreningens logga :<a style="float:right;margin:1px;" class="tooltip">
+              <span> Loggan ser bäst ut med vit bakgrund och storleken 320 (bredd) X 90 (höjd) pixlar.
+Ifall logga saknas så visas istället föreningen namn.</span></a></label>
+			  	<div  class="col-md-9" >
+		  			<div id="assologowarpper">
+                        <div id="img-border" >
+  							<img id="associationlogo" src="logos/{{profile.logo}}" />
+                        </div>
+                        <input type="file" id="assologo" file-model="myFile" onchange="angular.element(this).scope().uploadupdatelogo()"  />
+                        
+                    </div>                    
+			  	</div>
+	 		</div>
+
+		  	<div class="form-group" >
+		  			<label class="col-md-3" >Bostadsrättsförening :</label>
+	 			<div class="col-md-9" >
+		 			<input type="text" class="form-control" ng-model="profile.housing_ass_name" value="{{profile.housing_ass_name}}" disabled />
+		  		</div>
+	 		</div>
+		  	<div class="form-group" >
+		  			<label class="col-md-3" >Antal lägenheter :</label>
+	 			<div class="col-md-9" >
+		 			<input class="form-control" ng-model="profile.apartment_count" value="{{profile.apartment_count}}" disabled />
+		  		</div>
+	 		</div>
+	 		<!--<div class="form-group" >
+		  			<label class="col-md-3" >Org.nummer :</label>
+	 			<div class="col-md-9" >
+		 			<input class="form-control" ng-model="profile.org_number" value="{{profile.org_number}}" disabled />
+		  		</div>
+	 		</div>  --> 
+	 		
+		  	<div class="form-group" >
+		  		<label class="col-md-3"  >Lösenord till appen : </label>
+		  		<div  class="col-md-9" >
+		 			<input class="form-control" ng-model="profile.building_password" value="{{profile.building_password}}" disabled />
+		  		</div>
+
+		  	</div>
+		  	<div class="form-group" >
+		  		<label class="col-md-3" > Län  :</label>
+		  		<div  class="col-md-9" >
+		  		<select class="form-control" ng-options="state as state.state_name for state in states" ng-model="selectedCounty" ng-change="updatemumciplatiesciew( selectedCounty.state_id )" disabled=""></select>
+		 		</div>	  		
+		  	</div>
+		  	<div class="form-group" >
+		  		<label class="col-md-3" >Kommun  :</label>
+		  		<div  class="col-md-9" >
+		  			<select class="form-control" ng-options="munci as munci.m_name for munci in muncies" ng-model="selectedMunci" disabled=""></select>		 			
+		  		</div>
+	 		</div>
+
+		  	<!-- <div class="form-group" >
+		  		<label  class="col-md-3" >Adress :</label>
+		  		<div  class="col-md-9" >
+		 			<input type="text" class="form-control" ng-model="profile.address" value="{{profile.address}}"  disabled />
+		  		</div>
+	 		</div>
+
+		  	<div class="form-group" >
+		  		<label  class="col-md-3" > Postnummer  :</label> 
+		  		<div  class="col-md-9" >
+		 			<input type="text" class="form-control" ng-model="profile.zipcode" value="{{profile.zipcode}}" disabled />
+		  		</div>
+	 		</div> -->
+
+			<!--<div class="form-group" >
+		  		<label  class="col-md-3" > Telefon  :</label> 
+		  		<div  class="col-md-9" >
+		 			<input class="form-control" ng-model="profile.telephone_no" value="{{profile.telephone_no}}" disabled />
+		  		</div>
+	 		</div>  -->
+
+			<div class="form-group" >
+		  		<label class="col-md-3" >Beskrivning av föreningen  :</label>
+	 			<div  class="col-md-9" >
+		 			<textarea class="form-control" ng-model="profile.description" rows="10" disabled >{{profile.description}}</textarea>
+		  		</div>	  		
+		  	</div>
+
+		  	<div class="form-group" >
+		  	 	<div class="col-md-offset-3 col-md-9">
+		  			<a id="editprofilebtn" class="btn-default" ng-click="enableedit()" ><img src="img/news_edit.jpg" /></a>
+		  			<button id="updateprofilebtn" type="button" class="btn btn_back add-button" ng-click="edit(profile)" style="display:none" >Spara</button>
+		 			
+		 		</div>		
+		  	</div>	
+
+	  	</form>
+
+	</div>		  	
+  </div>
+  
+</div>
+
+
+</div>
+</div>
+<footer >
+  <div class="container"  >
+    
+      <ul id="footer-access-nav">
+        <li><a href="/icefire_web#">HEM</a></li> 
+        <li><a href="/icefire_web/#/Howitwork">SA FUNKAR DET</a></li>
+        <li><a href="/icefire_web/#/Help">HJALP</a></li> 
+        <li><a href="/icefire_web/#/Map">OM BOSTADSRATTAPPEN</a></li> 
+        <li><a href="/housingadmin2">LOGGA IN</a></li>
+        <li><a href="/icefire_web/#/sign-up ">ANSLUT</a></li>
+      </ul>
+      <ul id="footer-access-nav-right">
+          <li><a href="#">Kotakta Oss</a></li>
+          <li><a href="#"><img src="css/assets/images/logo1.jpg"></a></li> 
+      </ul>
+      <div class="clear"></div>
+    
+    </div>
+    
+  
+   <div id="copy" class="container" >
+    Copyright   &copy;  2014 av Bostadsrättappen. Alla rättigheter förbehållna.
+    <div id="top">
+    <img src="css/assets/images/top.jpg" width="90px;" height="40px">
+   </div>
+   </div>
+
+  
+  </footer>
+

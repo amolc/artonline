@@ -1,0 +1,16 @@
+<ion-view title="" class="bgreen" >
+  <ion-content >
+  <div id="headBack">
+   	<a href="#/states"><i class="ion-chevron-left  fontsize64"></i></a>
+   </div>
+   <div class="bartitle">
+      <h1 class="kommun" id="commutitle">Kommmun</h1>
+    </div>
+    <ion-list id="goList">
+      <ion-item ng-repeat="munci in muncipalities" class="item-icon-right" type="item-text-wrap" href="#/housingassociation/{{munci.m_id}}">
+        {{munci.m_name}}
+        <i class="icon ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

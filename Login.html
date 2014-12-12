@@ -1,0 +1,20 @@
+ <div ng-controller="loginController">
+<div id="main_wrapper">
+  <div class="login_wrapper">
+    <div class="login_logo"> </div>
+    <div class="clear"></div>
+    <div class="login_form">
+      <div class="login_name">
+        <input type="text" name="Name" class="LoginName" placeholder="Användarnamn" id="" ng-model="user.username" required="required"/>
+      </div>
+      <div class="login_name">
+        <input type="password" name="Name" class="Passowrd" placeholder="Lösenord?" id="" ng-model="user.password" required="required"/>
+      </div>
+      <div class="login_button">
+        <input type="submit" name="Login" class="LoginButton" value="Logga In" id="" ng-click="login(user)"/>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>

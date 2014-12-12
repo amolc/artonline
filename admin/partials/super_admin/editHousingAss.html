@@ -1,0 +1,227 @@
+<div ng-controller="adminedithousController">
+<div class="page-container">
+  <div class="sidebar-menu">
+    <header class="logo-env"> 
+      <!-- logo -->
+      <div class="logo"> <a href="../main/index.html"> <img class="logoimage" src="css/assets/images/logo.png" alt="" /> </a> </div>
+      <!-- logo collapse icon -->
+      <div class="sidebar-collapse"> <a href="" class="sidebar-collapse-icon with-animation" ng-click="showhide('main-menu')"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition --> 
+        <i class="entypo-menu"></i> </a> </div>
+      <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+      <div class="sidebar-mobile-menu visible-xs"> <a href="" class="with-animation" ng-click="showhide('main-menu')"><!-- add class "with-animation" to support animation --> 
+        <i class="entypo-menu"></i> </a> </div>
+    </header>
+    <ul id="main-menu" class="" >
+      <li class="opened active"> <!--<a href="" ng-click="showhide('sub_menu')"><i class="entypo-menu"></i><span>Admin action</span></a>-->
+        <ul id="sub_menu">
+          <li> <a ng-click="showhide('inner_submenu_state')"> <i class="entypo-menu"></i><span>States</span></a> 
+          	<ul id="inner_submenu_state" style="display:none;">
+		<li class="active">
+			<a  ng-click="goto('Addstate')"><span>Add State</span></a>
+		</li>
+		<li class="active">
+			<a  ng-click="goto('Admin')"><span>Manage State</span></a>
+		</li>
+		</ul>
+          	</li>
+          <li class="active"> <a href="" ng-click="showhide('inner_submenu_Muni')"> <i class="entypo-menu"></i><span>Municipalty</span></a>
+          	<ul id="inner_submenu_Muni" style="display:none;">
+		<li class="active">
+			<a  ng-click="goto('Addmunicipality')"><span>Add Municipalty</span></a>
+		</li>
+		<li class="active">
+			<a  ng-click="goto('Adminmunicipality')"><span>Manage Municipalty</span></a>
+		</li>
+		</ul>
+          	 </li>
+          	   <li> <a ng-click="showhide('inner_submenu_housingAss')"> <i class="entypo-menu"></i><span>Housing Association</span></a> 
+          	<ul id="inner_submenu_housingAss" style="display:none;">
+		<li class="active">
+			<a ng-click="goto('Addstate')"><span>Add Housing Association</span></a>
+		</li>
+		<li class="active">
+			<a ng-click="goto('HousingAssociation')"><span>Manage Housing Association</span></a>
+		</li>
+		</ul>
+          	</li>
+        </ul>
+      </li>
+    </ul>
+  </div> 
+  <div class="main-content">
+    <div class="row"> 
+      <!-- Profile Info and Notifications -->
+      <div class="col-md-6 col-sm-8 clearfix">
+        <ul class="user-info pull-left pull-none-xsm">
+          <!-- Profile Info -->
+          <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right --> 
+           <a ng-model='adminusername' class="dropdown-toggle" data-toggle="dropdown">Welcome {{adminusername}}</a>
+            <ul class="dropdown-menu">
+              <!-- Reverse Caret -->
+              <li class="caret"></li>
+              <!-- Profile sub-links -->
+              <li> <a href="#"> <i class="entypo-user"></i> Edit Profile </a> </li>
+              <li> <a href="../../mailbox/main/index.html"> <i class="entypo-mail"></i> Inbox </a> </li>
+              <li> <a href="../../extra/calendar/index.html"> <i class="entypo-calendar"></i> Calendar </a> </li>
+              <li> <a href="#"> <i class="entypo-clipboard"></i> Tasks </a> </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+        </ul>
+      </div>
+      <!-- Raw Links -->
+      <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+        <ul class="list-inline links-list pull-right">
+          <li class="logga"> <a ng-click="logout()"> Log Out </a> </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row"> </div>
+    <h2 class="table_heading">Edit Housing Association</h2>
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              
+<form role="form" class="form-horizontal form-groups-bordered" ng-submit='edithou(assdetail)' >
+  <div class="form-group">
+		<label for="field-1" class="col-sm-3 control-label">Bostadsrättsförening</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" id="field-1" placeholder="Enter housing association name name" ng-model='assdetail.housing_ass_name' required />
+		</div>
+	</div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Org.nummer</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Org.nummer" ng-model='assdetail.org_number' />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Antal lägenheter</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Antal lägenheter" ng-model='assdetail.apartment_count'>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Län</label>
+    <div class="col-sm-5">
+      <select class="form-control" ng-options="state as state.state_name for state in states" ng-model="selectedCounty" ng-change="updatemumciplatiesciew( selectedCounty.state_id )" required ></select>
+    </div>
+  </div>
+  
+  <div class="form-group">
+		<label class="col-sm-3 control-label"> Kommun </label>
+		<div class="col-sm-5">
+				<select class="form-control" ng-options="munci as munci.m_name for munci in muncies" ng-model="selectedMunci" required ></select>         
+        
+		</div>
+	</div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Building Password</label>
+    
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Enter builduing password" ng-model='assdetail.building_password'>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-d" class="col-sm-3 control-label">Description</label>
+    <div class="col-sm-5">
+      <textarea class="form-control" id="field-d" placeholder="Description" ng-model='assdetail.description'></textarea>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Kontaktperson</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Kontaktperson" ng-model='assdetail.contact_name'>    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Roll i styrelsen</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Roll i styrelsen" ng-model='assdetail.role'>    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Mobil</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Mobil" ng-model='assdetail.phone_no' />    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-email" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-email" placeholder="Email" ng-model='assdetail.email' />    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-pass" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-pass" placeholder="Password" ng-model='assdetail.password' />    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Address Line 1</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Address" ng-model='assdetail.address1'>    
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="field-1" class="col-sm-3 control-label">Address Line 2</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="field-1" placeholder="Address" ng-model='assdetail.address2'>    
+    </div>
+  </div>
+ 
+  
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-5">
+							<button type="submit" class="btn btn_back" >Submit</button>
+						</div>
+					</div>
+						</div>
+					
+					
+</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer --> 
+  </div>
+  <div id="chat" class="fixed" data-current-user="Art Ramadani" data-order-by-status="1" data-max-chat-history="25">
+    <div class="chat-inner"> </div>
+    <!-- conversation template -->
+    <div class="chat-conversation">
+      <ul class="conversation-body">
+      </ul>
+    </div>
+  </div>
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+</div>

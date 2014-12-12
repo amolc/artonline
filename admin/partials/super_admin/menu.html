@@ -1,0 +1,115 @@
+<div>
+<div class="page-container">
+
+<div class="sidebar-menu">
+    <header class="logo-env"> 
+      <!-- logo -->
+      <div class="logo"> <a> <img class="logoimage" src="css/assets/images/logo1.png" alt="" /> </a> </div>
+     
+         </header>
+    <ul id="main-menu" class="" >
+      <li class="opened active"><!-- <a href="" ng-click="showhide('sub_menu')"><i class="entypo-menu"></i><span>Admin action</span></a>-->
+        <ul id="sub_menu">
+          <li> <a ng-click="showhide('inner_submenu_state')"> <i class="entypo-menu"></i><span>States</span></a> 
+            <ul id="inner_submenu_state">
+    <li class="active">
+      <a href="#/menu/addstate"><span>Add State</span></a>
+    </li>
+    <li class="active">
+      <a href="#/menu/manstate"><span>Manage State</span></a>
+    </li>
+    </ul>
+            </li>
+          <li class="active"> <a href="" ng-click="showhide('inner_submenu_Muni')"> <i class="entypo-menu"></i><span>Municipalty</span></a>
+            <ul id="inner_submenu_Muni" >
+    <li class="active">
+      <a href="#/menu/municipality"><span>Add Municipalty</span></a>
+    </li>
+    <li class="active">
+      <a href="#/menu/adminmunicipality"><span>Manage municipality</span></a>
+    </li>
+    </ul>
+             </li>
+              <li> <a ng-click="showhide('inner_submenu_housingAss')"> <i class="entypo-menu"></i><span>Housing Association</span></a> 
+            <ul id="inner_submenu_housingAss">
+    
+    <li class="active">
+      <a <a href="#/menu/housingassociation"><span>Manage Housing Association</span></a>
+    </li>
+    </ul>
+            </li>
+            <li> <a href="#/menu/price"> <i class="entypo-menu"></i><span>Pricing Setting</span></a> 
+         
+            </li>
+             <li> <a href="#/menu/transaction"> <i class="entypo-menu"></i><span>Transaction</span></a> 
+         
+            </li>
+        </ul>
+      </li>
+    </ul>
+  </div> 
+
+  <div class="main-content">
+    <div class="row"> 
+      <!-- Profile Info and Notifications -->
+      <div class="col-md-6 col-sm-8 clearfix">
+        <ul class="user-info pull-left pull-none-xsm">
+          <!-- Profile Info -->
+          <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right --> 
+            <a ng-model='adminusername' class="dropdown-toggle" data-toggle="dropdown">Welcome {{adminusername}}</a>
+            <ul class="dropdown-menu">
+              <!-- Reverse Caret -->
+              <li class="caret"></li>
+              <!-- Profile sub-links -->
+              <li> <a href="#"> <i class="entypo-user"></i> Edit Profile </a> </li>
+              <li> <a href="../../mailbox/main/index.html"> <i class="entypo-mail"></i> Inbox </a> </li>
+              <li> <a href="../../extra/calendar/index.html"> <i class="entypo-calendar"></i> Calendar </a> </li>
+              <li> <a href="#"> <i class="entypo-clipboard"></i> Tasks </a> </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+        </ul>
+      </div>
+      <!-- Raw Links -->
+      <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+        <ul class="list-inline links-list pull-right">
+         <li class="logga"> <a ng-click="logout()"> Logga ut </a> </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+   <div ui-view class="main-content"></div>
+<div class="panel-heading"> </div>
+    <!-- Footer --> 
+  </div>
+  <div id="chat" class="fixed" data-current-user="" data-order-by-status="1" data-max-chat-history="25">
+    <div class="chat-inner"> </div>
+    <!-- conversation template -->
+    <div class="chat-conversation">
+      <ul class="conversation-body">
+      </ul>
+    </div>
+  </div>
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+</div>

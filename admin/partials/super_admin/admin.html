@@ -1,0 +1,94 @@
+
+    <h2 class="table_heading">STATE MANGEMENT</h2> 
+   
+   	<a href="#/menu/addstate" class="btn btn-primary add_btn_container pull-right " type="button" >New Lan</a>
+   
+   <div class="pull-right">
+   	
+   	<input class="form-control1" type="text" placeholder="Filter" ng-model="search"/>
+   </div>
+
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"> </div>
+          <table class="table table-bordered table-striped datatable" id="table-2">
+	<thead>
+		<tr>
+			
+			<th><a href="" ng-click="predicate = 'state_name' ;reverse=!reverse ">Län</a>
+				<!--(<a href="" ng-click="predicate1 = '-state_name'; reverse=false">^</a>) -->	
+			</th>
+			<th>land</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+     <tr ng-repeat="state in states  | filter:search | orderBy :predicate:reverse | startFrom:pagination.page* pagination.perPage | limitTo:pagination.perPage">
+			<td>{{state.state_name}}</td>
+			<td>{{state.state_location}}</td>		
+			<td width="30%">
+				<a href="#/menu/editstate/{{state.state_id}}" class="btn btn-default btn-sm btn-icon icon-left">
+					<i class="entypo-pencil"></i>
+					Edit
+				</a>
+				
+				<a class="btn btn-danger btn-sm btn-icon icon-left" ng-click='del({{state.state_id}})'>
+					<i class="entypo-cancel"></i>
+					Delete
+				</a>
+				<a href="#/menu/viewstate/{{state.state_id}}" class="btn btn-info btn-sm btn-icon icon-left">
+					<i class="entypo-info"></i>
+					View
+				</a>
+			</td>
+		</tr>
+		</tbody>
+</table>
+<div class="page_no">
+<button ng-hide="pagination.page == 0" ng-click="pagination.prevPage()">Previous</button>
+<span  ng-repeat="n in [] | range: pagination.numPages" ng-class="{current: n == pagination.page}">
+    <button  ng-click="pagination.toPageId(n)">{{n + 1}}</button>
+</span>
+   <button ng-hide="pagination.page + 1 >= pagination.numPages" ng-click="pagination.nextPage()">Next</button>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer --> 
+  </div>
+  <div id="chat" class="fixed" data-current-user="" data-order-by-status="1" data-max-chat-history="25">
+    <div class="chat-inner"> </div>
+    <!-- conversation template -->
+    <div class="chat-conversation">
+      <ul class="conversation-body">
+      </ul>
+    </div>
+  </div>
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+</div>

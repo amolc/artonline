@@ -1,0 +1,127 @@
+.main_login{
+	width: 100%;
+	margin: 0 auto;
+}
+.login_form{
+	width: 90%;
+	margin: 0 auto;
+}
+.form-group{
+	
+}
+.login_inner{
+	width: 70%;
+	margin: 0 auto;
+}
+.login_header{
+	 margin: 10% auto;
+    text-align: center;
+    width: 50%;
+}
+.loginbtn{
+	margin-left: 14%;
+}
+.btn_success_munci{
+	
+}
+.btn-success, .btn-green {
+	color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	margin-left: 623px;
+}
+.btn-success_green {
+	color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+}
+.btn-success_green_add_muc {
+	color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	  margin-left: 62%;
+	  margin-bottom: 0.5% !important;
+}
+.btn-success_green_add_hou {
+	color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	  margin-left: 76%;
+	  margin-bottom: 0.5% !important;
+}
+.btn_back{
+	color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	margin-left: 13%;
+	margin-bottom: 2%;
+	margin-bottom: 2% !important;
+}
+.btn-success-service{
+    color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	margin-left: 88%;
+	 margin-bottom: 0.5%;
+}
+.tddata{
+    width: 4%;
+}
+.actiontd{
+	width: 11%;
+}
+.actiontd_service{
+	width: 14%;
+}
+.actiontd_contact{
+	width: 19%;
+}
+.btn-success-contact{
+    color: #fff;
+	background-color: #00a651;
+	border-color: #00a651;
+	margin-left: 89%;
+	 margin-bottom: 0.5%;
+}
+.tddata_not{
+	width: 6%;
+}
+.actiontd_not{
+	width: 11%;
+}
+
+.view_notif{
+	float: right;
+    font-size: 20px;
+    word-spacing:20px;
+    margin-right: 10px;
+}
+
+a.tooltip {outline:none; 
+	background: url('../images/tooltip.jpg');
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	float: right;
+}
+a.tooltip span {
+    z-index:10;display:none; padding:14px 20px;
+    margin-top:-30px; margin-left:18px;
+    width:240px; line-height:16px;
+}
+a.tooltip:hover span{
+    display:inline; position:absolute; color:#111;
+    border:1px solid #DCA; background:#fffAF0;}
+
+    
+/*CSS3 extras*/
+a.tooltip span
+{
+    border-radius:4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+        
+    -moz-box-shadow: 5px 5px 8px #CCC;
+    -webkit-box-shadow: 5px 5px 8px #CCC;
+    box-shadow: 5px 5px 8px #CCC;
+}

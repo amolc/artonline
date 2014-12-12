@@ -1,0 +1,65 @@
+
+
+              <div class="form-group" ng-if="logo!=''">
+                <label class="col-md-4 noborder" ></label>
+                <div  class="col-md-8" >
+                  <img id="associationlogo" ng-src="logos/{{logo}}" />
+                </div>
+                <div class="clear"></div>
+            </div>  
+
+              <div id="bred-crum" >
+                
+                <a href="#" class="source_sans_prosemibold darkgreen fontsize14" >KONTAKTER  ></a> 
+                  <a class="source_sans_prosemibold lightgreen fontsize14"> Kontakter</a>
+                 
+              </div>
+                
+              <form class="form-horizontal source_sans_prosemibold" id="profileform" ng-submit="Addcontact(addcontact)" >
+                <div class="form-group" >
+                      <label class="col-md-3">L&auml;gg till kontakt :</label>
+                  <div class="col-md-9" >
+                    <input class="form-control" placeholder="Titel" ng-model="addcontact.contact_type" value="{{addcontact.contact_type}}"  required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-3"><label class="col-md-3" id="contact-icons-name"></label></div>
+                  <div class="col-md-9" >
+                  <input class="form-control" placeholder="Namn" ng-model='addcontact.name' required />
+                  <input class="form-control" placeholder="Beskrivning" ng-model='addcontact.name_x' />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-3"><label class="col-md-3" id="contact-icons-email"></label></div>
+                  <div class="col-md-9" >
+                    <input type="email" class="form-control" placeholder="Emailadress" ng-model='addcontact.email' />
+                    <input type="text" class="form-control" placeholder="Beskrivning" ng-model='addcontact.email_x' />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-3"><label id="contact-icons-mobile"></label></div>
+                  <div class="col-md-9" >
+                    <input type="tel" class="form-control" placeholder="Telefon/mobilnummer" ng-model='addcontact.phone' />
+                    <input type="text" class="form-control" placeholder="Beskrivning" ng-model='addcontact.phone_x' />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-3"><label class="col-md-3" id="contact-icons-web"></label></div>
+                  <div class="col-md-9" >
+                    <input type="text" class="form-control" placeholder="Länknamn" ng-model='addcontact.web_link_title' />
+                    <input type="url" class="form-control" placeholder="Komplett url (inkl. http://)" ng-model='addcontact.weblink' />
+                    <input type="text" class="form-control" placeholder="Beskrivning" ng-model='addcontact.weblink_x' />
+                  </div>
+                </div>
+                
+                           
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-md-9" >
+                    <button type="submit" class="btn btn_back add-button" >Spara</button>
+                  </div>
+                </div>
+
+            </form>
+
+           

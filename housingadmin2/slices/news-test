@@ -1,0 +1,175 @@
+   <div class="row"> 
+      <!-- Profile Info and Notifications -->
+     <div class="col-md-6 col-sm-8 clearfix">
+        <ul class="user-info pull-left pull-none-xsm">
+          <!-- Profile Info -->
+          <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right --> 
+         <a ng-model='adminusername' class="dropdown-toggle" data-toggle="dropdown">Welcome to  {{adminusername}}</a>                 
+          </li>
+        </ul>
+        <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+        </ul>
+      </div>
+      
+    </div>
+    <hr />
+    <div class="row"> </div>
+    <!---<h2 class="table_heading">NEWS FEED MANGEMENT</h2> --->
+    <div id="bred-crum"><span id="parent-bred">NYHETER &nbsp;> &nbsp;</span> <span id="child-bred">Nyhetsarkivet </span></div>
+   <!----<div class="add_btn_container"> 
+   	<button class="btn btn-success" type="button" ng-click="goto('Addnewsfeed')">Add News Feed</button>
+   </div>---->
+   <div class="clear"></div>
+   <!---<div class="left-content">
+                    <label>Nyheter :</label>
+                </div>--->
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"> </div>
+          
+              
+     <table class="table table-bordered table-striped datatable" id="table-2">
+	<thead>
+		<tr>
+			
+			<th>TYPE</th>
+			<th>NAME</th>
+			<th>DESCRIPTION</th>
+			<th>DATE & TIME</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="news in newsfeed">
+			<td class="tddata">{{news.cat_name}}</td>
+			<td class="tddata">{{news.title}}</td>
+			<td class="tddata">{{news.description}}</td>
+			<td class="tddata">{{needitimgws.time | date:'medium'}}</td>		
+			<td class="actiontd">
+				<a  id ="editimg" class="btn btn-default btn-sm btn-icon icon-left" ng-click='edit({{news.id}})'>
+					
+					�ndra
+				</a>
+				
+				<a  id ="deleteimg" class="btn btn-danger btn-sm btn-icon icon-left" ng-click='del({{news.id}})'>
+					
+					Ta Bort
+				</a>
+				<a  class="btn btn-info btn-sm btn-icon icon-left" ng-click='view({{news.id}})'>
+					<i class="entypo-info"></i>
+					View
+				</a>
+			</td>
+		</tr>
+		</tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer --> 
+  </div>
+ 
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+
+
+====
+
+
+<div class="page-container">
+  <div class="sidebar-menu" style="float:left;" >
+  		
+			<div style="height:100px;width:100%"></div>
+			<div align="right">
+				
+				
+				<img src="img/home.jpg" >	
+			</div>
+			<div align="right">
+			     <img src="img/konto-white.png" ><span>Konto</span>	
+				
+			</div>
+			<div align="right">
+				  <img src="img/nyhter.png" ><span>Nyheter</span>	
+			</div>
+			<div align="right">
+				  <img src="img/one_10.jpg" >	
+			</div>
+			<div align="right">
+				  <img src="img/one_12.jpg" >	
+			</div>
+			<div align="right">
+				  <img src="img/one_14.jpg" >	
+			</div>
+		
+  </div>
+  <div style="height:500px;width:200px;border:3px solid black;float: left;"></div>
+  <div  style="border:1px solid red;float: left">
+  
+  
+  =====
+  
+  <footer>
+  <div class="container"  >
+    <div>
+      <ul id="footer-access-nav">
+        <li><a href="#">HEM</a></li> 
+        <li><a href="#">SA FUNKAR DET</a></li>
+        <li><a href="#">HJALP</a></li> 
+        <li><a href="#">OM BOSTADSRATTAPPEN</a></li> 
+        <li><a href="#">LOGGA IN</a></li>
+        <li><a href="#">ANSLUT</a></li>
+      </ul>
+      <ul id="footer-access-nav-right">
+          <li><a href="#">Kotakta Oss</a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+    <div> 
+      <ul id="footer-access-nav-sub">
+        <li><a href="#">HEM</a></li> 
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+      <ul id="footer-access-nav-sub-right">
+        <li><a href="#"><img src="css/assets/images/logo1.jpg"></a></li> 
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+   <div id="copy">
+    Copyright   &copy;  2014 av Bostadsrättappen. Alla rättigheter förbehållna.
+    <div id="top">
+    <img src="css/assets/images/top.jpg" width="90px;" height="40px">
+   </div>
+   </div>
+
+  </div> 
+</footer>
+  	
+</div>

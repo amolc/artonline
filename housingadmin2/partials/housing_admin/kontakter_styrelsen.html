@@ -1,0 +1,63 @@
+				<div class="form-group" ng-if="logo!=''" >
+			  		<label class="col-md-4 noborder" ></label>
+				  	<div  class="col-md-8" >
+				  		<img id="associationlogo" ng-src="logos/{{logo}}" />
+				  	</div>
+				  	<div class="clear"></div>
+		 		</div>	
+			  	<div id="bred-crum" >
+ 					<a href="#/app/kontakter/Kontakter_styrelsen" >KONTAKTER </a> &gt; <a> Styrelsen</a>
+ 				</div>
+		  	
+			<div class="row">
+				<div class="col-md-5" id="kontolist">
+					<div class="form-horizontal sortable-container" sv-root sv-part="contact" >
+						<div class="form-group" ng-repeat="con in contact" sv-element>
+							<label class="col-md-6" ng-click="viewContact(con, $index )" ng-class="{activeKonto: $index === selectedIndex }" >{{con.contact_type}} <!-- <span class="glyphicon glyphicon-align-justify pull-right" aria-hidden="true"></span> --></label>
+							<!-- <div class="col-md-6">
+								<label >{{con.contact_name}}</label>								
+							</div> -->
+						</div>
+					</div>
+
+			  			<a href="#/app/kontakter/newStyrelsen"><img style="margin-left:-10px;" src="img/kontakter_add.jpg"></a>
+			  			<a ng-click="shiftup( contact )" ><img style="margin-left:-12px;" src="img/kontakter_order.jpg"></a>
+			  		
+				</div>		
+				<div class="col-md-5">
+					<form class="form-horizontal" id="contactform" ng-controller="contactsingleController" style="display:none;">
+						<div class="form-group" id="" >
+							<input type="text" ng-model="singleContact.contact_type
+							" value="{{singleContact.contact_type}}" class="form-control" disabled />
+						</div>
+						<div class="form-group" id="contact-icons-name2" >
+							<input type="text" ng-model="singleContact.contact_name
+							" value="{{singleContact.contact_name}}" class="form-control" disabled />
+							<input type="text" ng-model="singleContact.contact_name_x
+							" value="{{singleContact.contact_name_x}}" class="form-control" disabled />
+						</div>
+						<div class="form-group" id="contact-icons-email2" >
+							<input type="text" ng-model="singleContact.email" value="{{singleContact.email}}" class="form-control" disabled />
+							<input type="text" ng-model="singleContact.email_x" value="{{singleContact.email_x}}" class="form-control" disabled />
+						</div>
+						<div class="form-group" id="contact-icons-mobile2" >
+							<input type="phone" ng-model="singleContact.phone_number" value="{{singleContact.phone_number}}" class="form-control" disabled />
+							<input type="text" ng-model="singleContact.phone_number_x" value="{{singleContact.phone_number_x}}" class="form-control" disabled />
+						</div>
+						<div class="form-group" id="contact-icons-web2" >
+							<input type="text" ng-model="singleContact.web_link_title" value="{{singleContact.web_link_title}}" class="form-control"  disabled />
+							<input type="url" ng-model="singleContact.web_link" value="{{singleContact.web_link}}" class="form-control"  disabled />
+							<input type="text" ng-model="singleContact.web_link_x" value="{{singleContact.web_link_x}}" class="form-control" disabled />
+						</div>
+						<div class="form-group" >
+							<a id="editcontact" class="btn-default" ng-click="enableedit()" ><img src="img/news_edit.jpg"></a>
+							<a id="deletecontact" class="btn-default" ng-click="deleteContact( singleContact, index )" ><img src="img/kontakter_delete.jpg"></a>
+		  					<button id="updatecontact" type="button" class="btn btn_back add-button" ng-click="edit(singleContact, index )" style="display:none" >Spara</button>
+						</div>
+					</form>
+				</div>	
+			</div>	
+			
+			
+		  	
+		  	
