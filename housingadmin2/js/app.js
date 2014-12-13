@@ -56,7 +56,7 @@ $stateProvider
         .state('app.artist.artworklist', {
             url: "/artworklist",
             templateUrl: "partials/housing_admin/artworklist.html",
-            controller : 'paymentController'
+            controller : 'artworkController'
         })
         .state('app.artist.editartwork', {
             url: "/editartwork/:id",

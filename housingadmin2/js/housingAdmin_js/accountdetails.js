@@ -69,7 +69,7 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 		
 }
 
-function paymentController( $rootScope, $scope, $http) {
+function artworkController( $rootScope, $scope, $http) {
 
 $scope.artists= {};
 

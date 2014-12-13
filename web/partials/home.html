@@ -1,16 +1,5 @@
-<div class="col-md-1"></div>
-     <div class="col-md-10 header">
-     <a href="index.html"> <img src="images/logo.png"></a>
-     </div>
-     <div class="col-md-12 menubg">
-       <ul class="container nav nav-pills menucontain">
-          <li class="active"><a href="#">ARTWORK</a></li>
-          <li><a href="artist.html">ARTIST</a></li>
-          <li><a href="collector.html">COLLECTORS</a></li>
-          <li><a href="#">ANNOUNCEMENT</a></li>
-          <li><a href="#">ABOUT US</a></li>
-        </ul>
-     </div>
+
+     
      <div class="clearfix"></div>
      <div class="container bar">
      <div class="col-md-4"><h1>HOME - ARTWORK</h1> </div>
@@ -18,7 +7,19 @@
         <input type="text" class="form-control" placeholder="Search">
        </div>          
      </div>
+
+  <div class="container ABC" ng-repeat="artwork in artwork">   
+    <div class="row"> 
+          <div class="col-sm-6 col-md-4">
+                  <img src="images/img-1.jpg">
+            <div class="caption" >
+                    <h3>Artist : {{artwork.name}}</h3>
+            </div>
+        
+    </div>
+  </div>
       <!-- images -->
+      <!--
       <div class="container ABC">   
         <div class="row">
           <div class="col-sm-6 col-md-4">
@@ -83,4 +84,4 @@
               </div>
           </div>
         </div>
-      </div>
+      </div>    -->
