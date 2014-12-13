@@ -60,7 +60,7 @@ src: url('assets/fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embed
 #main-content{ padding: 40px;}
 #main_login{
 	width: 100%;
-background: url('assets/images/login_bg.jpg') no-repeat 0 0;
+background: url('assets/images/1052996_orig.jpg') no-repeat 0 0;
 background-size: 100% 100%;
 
 }
@@ -69,7 +69,7 @@ a{
 }
 .login_form{position: absolute; top: 50%; margin-top: -156px; right: 50%; margin-right: -109px; }
 .login_header{
-background: url('images/icefire_logo.png') no-repeat center center transparent;
+background: url('images/IMG_11122014_143013.png') no-repeat center center transparent;
 width: 209px;
 height: 146px;
 margin: 0 auto 38px;
