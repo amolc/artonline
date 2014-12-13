@@ -1,0 +1,195 @@
+<div ng-controller="homeController">
+	
+<div id="main_wrapper">
+  <div class="landing_main"> 
+    <!-- header -->
+    <header id="headtop">
+      <div class="container">
+        <a id="mobilemenu" class="mobshow">Menu</a><div class="header_logo_nav_main">
+          <div class="header_logo"> <a href="#"> <img src="images/index_logo.png" /> </a> </div>
+          <div class="navigation_main">
+            <ul>
+              <li> <a href="#/Home" ng-click="goto('/Home')" class="active" > HEM </a> </li>
+              <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> SÅ FUNKAR DET </a> </li>
+              <li> <a href="#/Help" ng-click="goto('/Help')"> HJÄLP </a> </li>
+              <li> <a href="#/Map" ng-click="goto('/Map')"> OM BOSTADSRÄTTAPPEN </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header_login_main">
+          <p> För styrelsen... </p>
+          <div class="header_login_buttons">
+            <a class="header_login" href="/housingadmin2" > LOGGA IN </a>
+            <div class="header_registor" ng-click="goto('/sign-up')"> ANSLUT </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header --> 
+    
+    <!-- banner -->
+    <div class="banner_main" id="slide-1">
+      <div class="banner_sticker"><a ng-click="goto('/Hello')" class="active" >  Hyresrätt? &nbsp; &lt;</a> </div>
+      <h2> Ha koll på din bostad! </h2>
+      <h3> Med bostadsrättappen har du koll på vad som händer i din föreningen. </h3>
+      <div id="app_download_sources" class="container">
+        <ul class="mobhide">
+          <li><a class="" href="#"><span>Nyheter</span><span>DIREKT I MOBILEN</span></a></li> 
+          <li><a class="" href="#"><span>Kontakter</span><span>SAMLADE PÄ ETT STÄLLE</span></a></li>
+        </ul>
+        <ul>
+          <li class="mobhide">
+            <a class="" href="#housing_board_main" ><span>Styrelsen</span><span>NÄR DU VIA APPEN</span></a>
+            
+          </li>
+          <li><a class="apple_app_store_button" href="#" target="_blank" ></a>
+          <a href="#" class="android_market_place_button" target="_blank" ></a></li>
+         
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- banner --> 
+    
+    <!-- general description -->
+    <div class="general_descritption_main" id="slide-2">
+      <div class="general_descritption_icon"> <img src="images/general_descripetion_cloud_icon.png" /> </div>
+      <h2> Din bostadsrätt med nya ögon </h2>
+      <div class="general_descritption_p">Bostadsrättappen är för dig som vill ha koll på ditt boende på ett enkelt och modernt sätt. Nyheter från föreningen kommer direkt i din mobil och du kan enkelt kommunicera med styrelsen via text och bilder som du tar med din telefon.<br><br>
+        I bostadsrättappen har du viktiga nummer, e-mailadresser och länkar angående ditt boende samlat på ett och samma ställe, tillgängligt även när du inte är hemma.</div>
+      <div class="general_descritption_icon1"> <img src="images/general_descripetion_cloud_icon_1.png" /> </div>
+    </div>
+    <div class="clear"></div>
+    <!-- general description --> 
+    
+    <!-- news -->
+    <div class="news_main">
+      <div class="news_inner">
+        <div class="news_phone_img">
+          <img src="images/news_phone_icon.png" alt="" />
+        </div>
+        <div class="news_right_side">
+          <h2> Nyhetsnotiser </h2>
+          <h3> Vad händer i föreningen? </h3>
+          <div class="news_p"> Nyhetsnotiser från styrelsen dyker upp på din skärm 
+            så att du på ett enkel och smidigt sätt får del av informationen vare sig du är hemma, på stan eller på landet. Nyhetsnotiser kan vara generell information, gratulationer, brådskande meddelanden eller angående föreningens ekonomi. </div>
+          <div class="news_icons_main">
+            <div class="news_tick_icon">
+              <div class="tick_icon"> <img src="images/news_tick_icon.png" /> </div>
+              <div class="tick_icon_main">
+                <h3> Sänkt avgift! </h3>
+                <h4> Avgiften kommer att . . . </h4>
+              </div>
+            </div>
+            <div class="alert_tick_icon">
+              <div class="tick_icon"> <img src="images/news_alert_icon.png" /> </div>
+              <div class="alert_icon_main">
+                <h3> Nymålat </h3>
+                <h4> Trapphuset har fått . . . </h4>
+              </div>
+            </div>
+            <div class="info_tick_icon">
+              <div class="tick_icon"> <img src="images/news_info_icon.png" /> </div>
+              <div class="info_icon_main">
+                <h3> Vårstädning </h3>
+                <h4> Årets städdag kommer . . . </h4>
+              </div>
+            </div>
+            <div class="celebration_tick_icon">
+              <div class="tick_icon"> <img src="images/news_celebration_icon.png" /> </div>
+              <div class="celebratio_icon_main">
+                <h3> Glad midsommar! </h3>
+                <h4> Önskar alla vi i styrelsen! </h4>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+    </div>
+    
+    <!-- news --> 
+    
+    <!-- housing board -->
+    <div class="housing_board_main" id="housing_board_main" >
+      <div class="housing_board_inner">
+        <div class="housing_board_right">
+          <img src="images/housing_board_mobile_img.png" alt="" /> 
+        </div>
+        <div class="housing_board_left">
+          <div class="housing_board">
+            <h2> Styrelsen </h2>
+            <h3> Kommunicera med styrelsen </h3>
+            <div class="housing_board_p">
+              <p> Har du någon fråga till styrelsen som du skulle behöva ha svar på men inte tagit tag i? Du är inte ensam. Med bostadsrättappen är det enkelt och smidigt att ställa frågor och även 
+                ge förslag till styrelsen. </p>
+              <br />
+              <p> Via appen kan du enkelt skicka ditt meddelande tillsammans med bilder som du tar direkt med mobilen. Ditt meddelande mottas  direkt av styrelsen som svarar dig så snabbt de kan. </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- housing board --> 
+    
+    <!-- contect detail -->
+    <div class="contect_detail_main">
+      <div class="contect_detail_inner">
+        <div class="contect_detail_left">
+          <img src="images/contect_detail_mobile_img.png" alt="" />
+        </div>
+        <div class="contect_detail_right">
+          <h2> Kontakter </h2>
+          <h3> Kontaktuppgifter då du behöver dem! </h3>
+          <div class="contect_detail_p"> I appen hittar du kontaktuppgifter till relevanta personer och företag så som städfirma, flyttfirma, mäklare, låssmed mm. Här finns också länkar till andra funktioner så som formuläret för felanmälan eller onlinebokningen av tvättstugan. Tillgängligt då du behöver det. </div>
+          <h4> Ladda ner appen gratis! </h4>
+          <div class="contect_detail_app_download_buttons">
+            <div class="contect_detail_app_strore_btn"></div>
+            <div class="contect_detail_android_market_btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- contect detail --> 
+    
+    <!-- footer -->
+    <div class="footer_main">
+      <div class="container">
+        <div class="footer_menu">
+          <ul>
+            <li> <a href="#/Home" ng-click="goto('/Home')" class="active" > Hem </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> Så Funkar Det </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Help" ng-click="goto('/Help')"> Hjälp </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#"> Om Bostadsrättappen </a> </li>
+            <li> &frasl; </li>
+            <li><a href="/housingadmin2" > LOGGA IN </a></li>
+            <li> &frasl; </li>
+            <li> <a ng-click="goto('/Thanks')"> Anslut </a> </li>
+          </ul>
+        </div>
+        <div class="contact_us">
+          <h2> Kontakta Oss </h2>
+          <div class="contact_us_icon"></div>
+        </div>
+        
+        <div class="clear"></div>
+        <div class="footer_line"></div>
+        <div class="footer_copy_right_text"> Copyright © 2014 av Bostadsrättappen. Alla rättigheter förbehållna. </div>
+        <div id="go_to_top"> <a href="#"> <img src="images/go_to_top.png" /> </a> </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- footer --> 
+  </div>
+  <div class="clear"></div>
+</div>
+</div> 

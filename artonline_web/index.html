@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app="icefire">
+<head>
+   	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Neon Admin Panel" />
+	<meta name="author" content="Laborator.co" />
+    <!-- <link href="topcoat/css/topcoat-mobile-light.min.css" rel="stylesheet"> -->
+   
+   
+     <script src="lib/jquery-1.9.1.min.js"></script>
+     <script src="lib/angular.js"></script>
+     <script src="lib/angular-touch.js"></script>
+     <script src="lib/angular-resource.js"></script>
+     <script src="lib/angular-animate.js"></script>
+     <script src="lib/angular-route.js"></script>
+     <script src="js/app.js"></script>
+     <script src="js/config.js"></script>
+     <script src="lib/angular-cookies.js"></script>
+     <script src="lib/angular-cookies.min.js"></script>
+     <script src="lib/angular-cookies.min.js.map"></script>
+       <!-- icefire web -->
+     <script src="js/icefireweb_js/HAdminLoginController.js"></script>
+     <script src="js/icefireweb_js/homecontroller.js"></script>
+     <script src="js/icefireweb_js/classie.js"></script>
+     
+    <!-- new added  -->
+    
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" >
+
+</head>
+
+<body ng-app="icefire" class="" >
+
+
+<div ng-view ng-class=""></div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+       $(document).on('click','.question',function(){
+            $(this).next('div').toggle('slow');
+       }); 
+
+        $('#help_map a').click(function(){
+            $(document).scrollTo( $(this).attr('id')+'_click');    
+        });
+        
+
+    });
+    window.onresize = function(){  manageHeader(); }
+    function manageHeader () {
+        $('.banner_main').css('margin-top', $('#headtop').height() );
+    }
+</script>
+</body>
+</html>

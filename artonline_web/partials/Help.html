@@ -1,0 +1,167 @@
+<div ng-controller="homeController">
+<div id="main_wrapper">
+  <div class="landing_main"> 
+    <!-- header -->
+    <header id="headtop">
+      <div class="container">
+        <a id="mobilemenu" class="mobshow">Menu</a><div class="header_logo_nav_main">
+          <div class="header_logo"> <a href="javascript:;"> <img src="images/index_logo.png" /> </a> </div>
+          <div class="navigation_main">
+            <ul>
+              <li> <a href="#/Home" ng-click="goto('/Home')"> HEM </a> </li>
+              <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> SÅ FUNKAR DET </a> </li>
+              <li> <a href="#/Help" ng-click="goto('/Help')" class="active" > HJÄLP </a> </li>
+              <li> <a href="#/Map" ng-click="goto('/Map')" > OM BOSTADSRÄTTAPPEN </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header_login_main">
+          <p> För styrelsen... </p>
+          <div class="header_login_buttons">
+            <a class="header_login" href="/housingadmin2" > LOGGA IN </a>
+            <div class="header_registor" ng-click="goto('/sign-up')"> ANSLUT </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="clear"></div>
+    <!-- header --> 
+    
+    <!-- help -->
+    <div class="help_main">
+      <div class="help_inner">
+        <div class="help_left_navigation"  id="l">
+          <h2> Kategorier </h2>
+          <ul id="help_map">
+            <li> <a id="first" href="javascript:;"> Komma igång </a> </li>
+            <li> <a id="second" href="javascript:;"> Sekretess </a> </li>
+            <li> <a id="third" href="javascript:;"> Kostnader </a> </li>
+            <li> <a id="four" href="javascript:;"> HEMSIDA & EMAIL </a> </li>
+            <li> <a id="five" href="javascript:;"> Funktioner </a> </li>
+          </ul>
+        </div>
+        <div class="help_question_answers_main">
+          <h2> Frågor and Svar </h2>
+          <ul>
+            <div id="first_click">
+              <li>
+                <div class="question"> Hur får man tillgång till bostadsrättappen? </div>
+                <div class="answer"> Bostadsrättappen finns tillgänglig som mobilapp till iPhone och Android och kan laddas ner från App Store och Google Play. </div>
+              </li>
+              <li>
+                <div class="question"> Varför finns inte min förening med i appen? </div>
+                <div class="answer"> För att din förening ska finnas i appen så måste din styrelse ansluta föreningen till bostadsrättappen. Det gör de enkelt genom att använda sig av forumuläret (Anslut) på denna hemsida. </div>
+              </li>
+              <li>
+                <div class="question"> Hur lång tid tar det att ansluta föreningen? </div>
+                <div class="answer">
+                  <p> Hela processen tar endast några dagar så tipsa din styrelse idag så är ni igång på en vecka.</p>
+                                <br />
+                </div>
+              </li>
+            </div>
+             <div id="sec_click">
+            <li>
+              <div class="question"> Har alla som laddar ner appen tillgång till informationen i appen? </div>
+              <div class="answer"> Nej, varje förening har ett eget lösenord så det är endast medlemmarna i er förening som ser vad som kommuniceras. </div>
+            </li>
+          </div>
+           <div id="three_click">
+            <li>
+              <div class="question"> Kostar appen något att ladda ner? </div>
+              <div class="answer"> Nej, appen ar kostnadsfri i App Store och Google Play så du kan ladda ner den så många gånger du vill. </div>
+            </li>
+            <li>
+              <div class="question"> Kostar det något för föreningen? </div>
+              <div class="answer"> För att täcka kostnader för våra servrar samt att kunna utveckla appen behöver vi ta en liten avgift från alla föreningar som ansluter sig. Kostnaden är mycket låg och baseras på antal lägenheter så att alla ska ha råd att använda appen. </div>
+            </li>
+          </div>
+
+             <div id="four_click">
+            <li>
+              <div class="question"> Vi har redan en hemsida, behövs verkligen en app då? </div>
+              <div class="answer"> Bostadsrättappen är ett perfekt komplement till kommunikationen på hemsidan. Det kan ibland vara svårt att få medlemmar att använda en hemsida så bostadsrättappen och funktionen med notifikation för nyheter skapar ett direkt intresse. Om det är mycket information eller dokument som lagts upp så fungerar nyheten i appen som en länk till er hemsida. </div>
+            </li>
+            <li>
+              <div class="question">Vi skickar redan ut nyheter via email, behövs verkligen en app då? </div>
+              <div class="answer"> Nyhetsbrev via email är tyvärr ett av de kommunikationsmedel som tappar i effektivitet. Många är vi som överröses av spam samt nyhetsbrev från diverse interessanta och mindre intressanta organisationer. Dessa meddelande riskerarar att försvinna i mängden och kan också vara svåra att hitta om man senare behöver läsa nyheten igen. En notifikation direkt i mobilen är istället ett enkelt och modernt sätt att ta till sig nyheter och i appen lagras alla tidigare nyheter inom olika kategorier. Appen skapar en positiv stämning och engagemang hos medlemmarna, något som är viktigt för varje styrelse och förening. </div>
+            </li>
+            <li>
+              <div class="question"> Funkar det på Windows och Blackberry också? </div>
+              <div class="answer"> Appen lanseras på grund av kostnadsskäl först endast på de två största plattformarna. Vi avser att utveckla versioner av appen till samtliga plattformar. </div>
+            </li>
+            <li>
+              <div class="question"> Men alla i föreningen har inte en smartphone? </div>
+              <div class="answer"> Det är viktigt att prata med alla i föreningen så att ni kan reda ut vilka som kan använda appen samt de som kanske varken har smartphone eller dator. Till dessa kommer ni också i fortsättningen behöva kommunisera till på ett mer traditionellt sätt. </div>
+            </li>
+            <li>
+              <div class="question"> Vi brukar sätta upp lappar i trappuppgången istället, räcker inte det? </div>
+              <div class="answer"> Många familjer spenderar perioder på annat håll som till exempel semester utomlands eller på lantstället. Dessa personer kan bli för sent informerade om viktiga händelser ifall det endast sätts upp lappar. En smart funktion är att nyheter i appen kan av styrelsen också skrivas ut och sättas upp i trappuppgången. På så sätt får alla samma information och styrelsen slipper skriva nyheten flera gånger. </div>
+            </li>
+          </div>
+
+           <div id="five_click">
+            <li>
+              <div class="question"> Vilka funktioner finns i appen? </div>
+              <div class="answer"> De huvudsakliga funktioner är; Nyheter från styrelsen, Skicka meddelande till styrelsen samt Kontakter. Vi jobbar kontinuerligt för att förbättra upplevelsen och för att lägga till fler funktioner.</div>
+            </li>
+            <li>
+              <div class="question"> Vi har formulär för felanmälan på hemsidan, hur funkar det med appen? </div>
+              <div class="answer"> Det funkar bra. En länk till formuläret kan läggas in under "Felanmälan" under kontakter. Där har alla medlemmar enkelt tillgång till formuläret. </div>
+            </li>
+            <li>
+              <div class="question"> Jag bor i en hyresrätt, kan jag också använda appen? </div>
+              <div class="answer">Tyvärr inte bostadsrättappen men vi håller just nu på att utveckla Hyresrättappen som kommer att fungera perfekt för just ditt boende. Läs mer och lämna din email på www.hyresrättappen.se</div>
+            </li>
+          </div>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- help --> 
+    
+    <!-- footer -->
+    <div class="footer_main">
+      <div class="container">
+        <div class="footer_menu">
+          <ul>
+            <li> <a href="#/Home" ng-click="goto('/Home')"> Hem </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> Så Funkar Det </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Help" ng-click="goto('/Help')" class="active" > Hjälp </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#"> Om Bostadsrättappen </a> </li>
+            <li> &frasl; </li>
+            <li><a href="/housingadmin2" > LOGGA IN </a></li>
+            <li> &frasl; </li>
+            <li> <a ng-click="goto('/Thanks')"> Anslut </a> </li>
+          </ul>
+          <div class="footer_menu2">
+            <ul>
+              <li> <a ng-click="goto('/privacy-policy')" > Integritetspolicy </a> </li>
+              <li> <a ng-click="goto('/sitemap')" > Sitemap </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contact_us">
+          <h2> Kontakta Oss </h2>
+          <div class="contact_us_icon"></div>
+        </div>
+        
+        <div class="clear"></div>
+        <div class="footer_line"></div>
+        <div class="footer_copy_right_text"> Copyright © 2014 av Bostadsrättappen. Alla rättigheter förbehållna. </div>
+        <div id="go_to_top"> <a href="#"> <img src="images/go_to_top.png" /> </a> </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- footer --> 
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+
+

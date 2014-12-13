@@ -1,0 +1,226 @@
+<div ng-controller="signupController">
+<div id="main_wrapper">
+  <div class="landing_main"> 
+    <!-- header -->
+    <header id="headtop">
+      <div class="container">
+        <a id="mobilemenu" class="mobshow">Menu</a><div class="header_logo_nav_main">
+          <div class="header_logo"> <a href="javascript:;"> <img src="images/index_logo.png" /> </a> </div>
+          <div class="navigation_main">
+            <ul>
+              <li> <a href="#/Home" ng-click="goto('/Home')"> HEM </a> </li>
+              <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> SÅ FUNKAR DET </a> </li>
+              <li> <a href="#/Help" ng-click="goto('/Help')"> HJÄLP </a> </li>
+              <li> <a href="#/Map" ng-click="goto('/Map')"> OM BOSTADSRÄTTAPPEN </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header_login_main">
+          <p> För styrelsen... </p>
+          <div class="header_login_buttons">
+            <a class="header_login" href="/housingadmin2" > LOGGA IN </a>
+            <div class="header_registor" ng-click="goto('/sign-up')"> ANSLUT </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="clear"></div>
+    <!-- header --> 
+    
+    <!-- map -->
+    <div id="signup_main" class="tophead">
+      <div class="container">
+        <div id="sipleft">
+          <h1> Anslut </h1>
+          <h2>er förening</h2>
+          <p>För att en förening ska synas i appen så måste denna ansluta sig till oss. Ni som vill använda appen måste därför vända 
+er till eran styrelse och fråga ifall detta är något för just er förening. Styrelsen kan sedan enkelt ansluta föreningen genom att fylla i forumläret eller kontakta oss 
+på <a href="mailto:anslut@bostadsrattappen.se">anslut@bostadsrattappen.se</a>.</p>
+        </div>
+        <form class="form-horizontal sipright" role="form" id="signupform">
+
+            <div class="form-group">
+              <label for="houseassname" class="col-sm-2 control-label">Bostadsrättsförening</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="houseassname" placeholder="" ng-model="user.housename"  >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="org_number" class="col-sm-2 control-label">Org.nummer </label>
+              <a class="tooltip" >
+              <span> Du kan enkelt hitta din förenings org.nummer på allabolag.se</span></a>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="org_number" placeholder="" ng-model="user.org_number"  >
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="apartment_count" class="col-sm-2 control-label">Antal lägenheter</label>
+              <a class="tooltip" >
+              <span> Ange totala antalet lagenhet plus ev. uthyrda lokaler</span></a>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="apartment_count" placeholder="" ng-model="user.apartment_count"  >
+              </div>
+            </div>
+            <div class="form-group" id="extrafg"></div>
+
+            
+            <div class="form-group">
+              <label for="county" class="col-sm-2 control-label">Län</label>
+              <div class="col-sm-10">
+                     <select class="form-control country" id="county" ng-change="loadkommuns( user.county )"
+          ng-options="state.state_id as state.state_name for state in states" ng-model="user.county" ></select> </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="col-sm-2 control-label">Gatuadress</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" placeholder="" ng-model="user.address"  >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="m_id" class="col-sm-2 control-label">Kommun</label>
+              <div class="col-sm-10">
+              <select class="form-control Kommun" id="m_id"
+          ng-options="munci.m_id as munci.m_name for munci in muncies" ng-model="user.m_id" ></select>
+                
+              </div>
+            </div>
+
+            
+            <div class="form-group">
+              <label for="zipcode" class="col-sm-2 control-label">Postnummer och Ort</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="zipcode" placeholder="" ng-model="user.zipcode"  >
+              </div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="zipcode" class="col-sm-2 control-label">Postnummer</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="zipcode" placeholder="" ng-model="user.zipcode"  >
+              </div>
+            </div> -->
+
+            <div class="form-group">
+              <label for="contact_name" class="col-sm-2 control-label">Kontaktperson</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="contact_name" placeholder="" ng-model="user.contact_name"  >
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="role" class="col-sm-2 control-label">Roll i styrelsen</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="role" placeholder="" ng-model="user.role" >
+              </div>
+            </div>
+
+            
+            <div class="form-group">
+              <label for="Email" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="Email" placeholder="" ng-model="user.email"  >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telephone_no" class="col-sm-2 control-label">Mobil</label>
+              <div class="col-sm-10">
+                <input type="phone" class="form-control" id="telephone_no" placeholder="" ng-model="user.telephone_no"  >
+              </div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="password" class="col-sm-2 control-label">Lösenord </label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" placeholder="" ng-model="user.password"  >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirm_password" class="col-sm-2 control-label">Bekräfta lösenord </label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="confirm_password" ng-model="user.confirm_password"  >
+              </div>
+            </div> -->
+            <div class="form-group" id="signupsubmit">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="signup( user )" >Ansök om anslutan </button>
+              </div>
+            </div>
+          
+            
+
+          
+          <!-- <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+              </div>
+            </div>
+          </div> -->
+          
+        </form>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+     <div class="section">
+      <div class="container">
+            <p class="section-one">Bostadsrättappen:<br>
+            Det <span>moderna</span> sättet att <span>kommunicera</span> inom bostadsrättsföreningen!</p>
+            <p class="section-two"> Kostnaden vi tar ut är mycket låg så att även de minsta föreningarna ska ha råd att ansluta sig till denna mycket omtyckta 
+
+            tjänst. Stora föreningar erbjuds mängdrabatt.
+            </p>
+            <div class="clear"></div>
+      </div>
+    </div> 
+
+    <!-- map --> 
+    
+    <!-- footer -->
+    <div class="footer_main">
+      <div class="container">
+        <div class="footer_menu">
+          <ul>
+            <li> <a href="#/Home" ng-click="goto('/Home')"> Hem </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Howitwork" ng-click="goto('/Howitwork')"> Så Funkar Det </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#/Help" ng-click="goto('/Help')"> Hjälp </a> </li>
+            <li> &frasl; </li>
+            <li> <a href="#"> Om Bostadsrättappen </a> </li>
+            <li> &frasl; </li>
+            <li><a href="/housingadmin2" > LOGGA IN </a></li>
+            <li> &frasl; </li>
+            <li> <a ng-click="goto('/Thanks')" class="active" > Anslut </a> </li>
+          </ul>
+          <div class="footer_menu2">
+            <ul>
+              <li> <a ng-click="goto('/privacy-policy')" > Integritetspolicy </a> </li>
+              <li> <a ng-click="goto('/sitemap')" > Sitemap </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contact_us">
+          <h2> Kontakta Oss </h2>
+          <div class="contact_us_icon"></div>
+        </div>
+        
+        <div class="clear"></div>
+        <div class="footer_line"></div>
+        <div class="footer_copy_right_text"> Copyright © 2014 av Bostadsrättappen. Alla rättigheter förbehållna. </div>
+        <div id="go_to_top"> <a href="#"> <img src="images/go_to_top.png" /> </a> </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!-- footer --> 
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
