@@ -74,9 +74,9 @@ $stateProvider
             abstract : true
             
         })
-        .state('app.collector.collection', {
-            url: "/collection",
-            templateUrl: "partials/housing_admin/collection.html",
+        .state('app.collector.collector1', {
+            url: "/collector1",
+            templateUrl: "partials/housing_admin/collector1.html",
             //controller : 'newsfeedController'
         })
         .state('app.collector.acollector', {

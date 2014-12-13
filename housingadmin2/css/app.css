@@ -292,7 +292,7 @@ background-position: 0 -36px;
 /**** footer close***/
 /* menu images***/
 #submenus{
-    background-color: #59c0c7;
+    background-color: grey;
 float: left;
 padding: 82px 0px;
 margin: 0 0 0 -1px;
@@ -760,7 +760,7 @@ input[type="date"]:focus {border: none;}
 font-weight: 100;
 font-style: normal;
 letter-spacing: 1px;
-color: #fff;
+color: #DC1F26;
 display: block;
 padding: 20px 0 15px 0;
 margin-right: auto;
