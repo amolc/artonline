@@ -34,6 +34,39 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 	 	}) 
 	};
 
+	$scope.uploadupdatelogo = function(){
+			var oFReader = new FileReader();
+		    oFReader.readAsDataURL(document.getElementById("assologo").files[0]);
+
+		    oFReader.onload = function (oFREvent) {
+		    	document.getElementById("associationlogo").src = oFREvent.target.result;
+		        //$scope.profile.logo = oFREvent.target.result;
+		        //document.getElementById("associationlogoinput").value = oFREvent.target.result;
+		        
+		        var file = $scope.myFile;
+				if( file ){
+					window.localStorage.setItem('logo',file.name);
+					$scope.logo = window.localStorage.getItem('logo');
+					var fd = new FormData();
+					fd.append('file', file );
+	        		
+		        	$http.post( baseURL + 'uploadlogo/', fd, { transformRequest: angular.identity,
+		            	headers: {'Content-Type': undefined } } ).success(function(res) {
+						
+						if (res.status == 'false') {
+						} else {
+							$scope.profile.logo = file.name;
+							$http.post(baseURL + 'UpdateProfile/', $scope.profile );
+						}
+						
+					}).error(function() {
+						alert("Upload Failed.");
+					});
+				}
+		    };
+			
+		}
+		
 }
 
 function artworkController( $rootScope, $scope, $http) {
