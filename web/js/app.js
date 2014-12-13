@@ -13,7 +13,7 @@ angular.module('artonline', ['ui.router'])
 .state('artist', {
             url: "/artist",
             templateUrl: "partials/artist.html",
-           // controller : 'adminLoginController'
+            controller : 'artistController'
         })
 
 .state('collector', {
