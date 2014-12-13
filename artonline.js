@@ -59,7 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/superadmin', express.static(__dirname + '/admin'));
 app.use('/admin', express.static(__dirname + '/housingadmin2'));
 
-app.use('/', express.static(__dirname + '/icefire_web'));
+app.use('/', express.static(__dirname + '/web'));
 
 
 payPrcoess = require('./api/pay.js');
