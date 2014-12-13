@@ -121,7 +121,7 @@ display: block;
 #tagline{ color: #e1efe1; font-family: 'source_sans_prosemibold'; }
 header
 {
-    background-color:#59c0c7;
+   
     height:130px;
     position: relative;
     z-index: 1;
@@ -620,10 +620,10 @@ min-width: 175px;
 #kontolist .form-group{ padding:0px; }
 #kontolist .glyphicon-align-justify:before{ cursor: pointer; }
 
-#rightback{ background: #3f8092; position: absolute;height: 100%; width: 40%;}
+#rightback{ background: #dc1f26; position: absolute;height: 100%; width: 40%;}
 #content > div > div { margin:0px; }
 #content > div > div > div { padding:0; }
-#content > div > div > div.col-md-2{ background: #3f8092; }
+#content > div > div > div.col-md-2{ background: #dc1f26; }
 #content > div > div > div.col-md-10{  background: #fff;  }
 #content > div > div > div.col-md-10 > div.row{ margin: 0px; }
 #main-nav{ text-align: left; list-style: none;margin-top: 87px;padding: 0px; margin-right:-1px; min-width: 178px;}
