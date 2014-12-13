@@ -56,16 +56,12 @@ app.all('*', function(req, res, next) {
   next();
  });
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/admin', express.static(__dirname + '/admin'));
-app.use('/mobile', express.static(__dirname + '/mobile/www'));
-app.use('/mobileapp', express.static(__dirname + '/mobileapp/www'));
-app.use('/myApp', express.static(__dirname + '/myApp/www'));
-app.use('/housingadmin', express.static(__dirname + '/housingadmin/www'));
-app.use('/housingadmin2', express.static(__dirname + '/housingadmin2'));
-app.use('/housingadmin3', express.static(__dirname + '/housingadmin3'));
-app.use('/icefire_web', express.static(__dirname + '/icefire_web'));
-app.use('/home', express.static(__dirname + '/home'));
-/*
+app.use('/superadmin', express.static(__dirname + '/admin'));
+app.use('/admin', express.static(__dirname + '/housingadmin2'));
+
+app.use('/', express.static(__dirname + '/icefire_web'));
+
+
 payPrcoess = require('./api/pay.js');
 app.get('/api/listOrders/:hid', payPrcoess.listOrders);
 app.get('/api/listAllOrders', payPrcoess.listAllOrders);
@@ -73,7 +69,7 @@ app.post('/api/addOrder', payPrcoess.addOrder);
 app.post('/api/addpaypalOrder', payPrcoess.addpaypalOrder);
 app.get('/ipn', payPrcoess.ipnProcess);
 
-app.post('/api/subscribe', subscribe.createSubscription );
+//app.post('/api/subscribe', subscribe.createSubscription );
 
 /*
 app.get('/api/state', state.findAllstate);
