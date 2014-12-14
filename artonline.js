@@ -60,6 +60,8 @@ app.use('/superadmin', express.static(__dirname + '/admin'));
 app.use('/admin', express.static(__dirname + '/housingadmin2'));
 app.use('/upload', express.static(__dirname + '/upload'));
 app.use('/', express.static(__dirname + '/web'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 
 
 payPrcoess = require('./api/pay.js');

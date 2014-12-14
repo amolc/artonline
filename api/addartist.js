@@ -42,13 +42,26 @@ exports.addetails= function (req,res){
     	var title = req.body.title;
 	   	var type = req.body.type;
 	   	var size = req.body.size;
-         var name = req.body.name;
-             console.log(name);   
-    	   	console.log(title);
+      var name = req.body.name;
+      var fs = require('fs');
+      
+      var tmp_path = req.files.file.path;
+      var artfilename = req.files.file.name ;
+      console.log( 'path='+tmp_path );
 
+    var target_path = './uploads/' + req.files.file.name;
+    // move the file from the temporary location to the intended location
+    fs.rename(tmp_path, target_path, function(err) {
+        if (err) throw err;
+        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+        fs.unlink(tmp_path, function() {
+            if (err) throw err;
+            //res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
+        });
+    });   
 
-    addartworkCrud.create({ name : '', artist:req.body.artist,title: title,type: type,size: size}, function (err, vals){
- 		//	console.log(vals)
+    addartworkCrud.create({ name : artfilename , artist:req.body.artist,title: title,type: type,size: size}, function (err, vals){
+ 			//console.log(vals);
       if( err ){
         var resdata={
           status:false,
@@ -63,6 +76,7 @@ exports.addetails= function (req,res){
 
  			res.jsonp(resdata);		
  		});
+
 };
 
 

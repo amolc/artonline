@@ -11,7 +11,7 @@
   <div class="container ABC">   
     <div class="row"> 
           <div class="col-sm-6 col-md-4" ng-repeat="artwork in artwork">
-                  <img src="images/img-1.jpg">
+                  <img src="{{uploadUrl}}{{artwork.name}}">
             <div class="caption" >
                     <h3>Artist : {{artwork.name}}</h3>
             </div>

@@ -27,8 +27,24 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 
 	$scope.artwork = {};
 	$scope.addArtwork = function( artwork ) {
-		artwork.artist = $scope.selectedartist.id;
-		$http.post(baseURL + 'addartwork', artwork).success(function(res) {
+		var formdata = new FormData();
+		formdata.append('artist', $scope.selectedartist.id );
+		formdata.append('title', artwork.title );
+		formdata.append('type', artwork.type );
+		formdata.append('size', artwork.size );
+		console.log( $scope.myFile );
+		var file = $scope.myFile;
+		
+		if( file ){
+			//artwork.file = file.name	
+			formdata.append('file', file );
+			console.log( formdata );
+
+		}
+		
+		$http.post(baseURL + 'addartwork', formdata, { transformRequest: angular.identity,
+		            	headers: {'Content-Type': undefined } } ).success(function(res) {
+			
 			if( res.status == true )
 				$state.go('app.artist.artworklist');
 	 	}) 
@@ -48,7 +64,7 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 					window.localStorage.setItem('logo',file.name);
 					$scope.logo = window.localStorage.getItem('logo');
 					var fd = new FormData();
-					fd.append('file', file );
+					/*fd.append('file', file );
 	        		
 		        	$http.post( baseURL + 'uploadlogo/', fd, { transformRequest: angular.identity,
 		            	headers: {'Content-Type': undefined } } ).success(function(res) {
@@ -61,7 +77,7 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 						
 					}).error(function() {
 						alert("Upload Failed.");
-					});
+					});*/
 				}
 		    };
 			
