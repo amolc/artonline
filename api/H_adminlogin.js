@@ -73,9 +73,11 @@ var db = mysql.createPool({
 
 
  exports.login1 = function(req, res) {
-  var name=req.body.username;
-  var password=req.body.buildingpass; 
-    CRUD(db, 'tbl_users').load({housing_ass_name : name,building_password : password }, function (err, val) {  
+  var email=req.body.email;
+  var password=req.body.password;
+  console.log(email);
+   console.log(password);
+    CRUD(db, 'tbl_users').load({user_email : email,user_password : password }, function (err, val) {  
       var resdata={
         status:false,
         message :'err'
@@ -84,8 +86,9 @@ var db = mysql.createPool({
         resdata.status=true;
         resdata.message='successfully login welcom to ..';      
       }else{
+        console.log(length);
         resdata.status=false;
-        resdata.message='fel lösenord ange en giltig';
+        resdata.message='unsccessful login';
       }
         
       res.jsonp(resdata);

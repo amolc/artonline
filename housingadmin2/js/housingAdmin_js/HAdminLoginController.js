@@ -30,18 +30,15 @@ function adminLoginController($scope, $location, $http, $state ) {
 	if( $scope.islogin === 'true' ){
 		$state.go('app.artist.addartwork');
 	}
-	$scope.user = {
-		username :'ADMIN',
-		password : '',
-		housingid:''
-	};  
+
 	
 	$scope.login = function(user) {
-		if(user.housingid == ''){
+		if(user.email == ''){
 		    alert('Enter Email id ');
 		} else if(user.password == ''){
 		    alert('Enter password');
-		}else {		      
+		}else {		 
+				console.log(user);     
 			$http.post(baseURL + 'HousingAdminLogin', user).success(function(res) {
 				$scope.response = res;
 				if (res.status == false) {

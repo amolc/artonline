@@ -154,7 +154,7 @@ app.post('/api/adminLogin', adminlogin.login);
 
 // apu link for housing admin panel
 
-app.post('/api/HousingAdminLogin', housingadminlogin.login);
+app.post('/api/HousingAdminLogin', housingadminlogin.login1);
 app.post('/api/HousingAppLogin', housingadminlogin.apphousinglogin);
 /*
 app.get('/api/services', services.findAllervices);
