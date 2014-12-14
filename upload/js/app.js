@@ -20,16 +20,18 @@ myApp.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(file, uploadUrl){
         var fd = new FormData();
         fd.append('file', file);
-        $http.post(uploadUrl, fd, {
+            console.log(file);
+        $http.post('/fileUpload', file, {
             transformRequest: angular.identity,
             headers: {'Content-Type': 'multipart/form-data'}
         })
         .success(function(){
+        console.log("Yo success");
         })
         .error(function(){
             
             console.log("Error");
-            
+
         });
     }
 }]);
