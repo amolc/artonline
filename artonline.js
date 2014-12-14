@@ -58,7 +58,7 @@ app.all('*', function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/superadmin', express.static(__dirname + '/admin'));
 app.use('/admin', express.static(__dirname + '/housingadmin2'));
-
+app.use('/upload', express.static(__dirname + '/upload'));
 app.use('/', express.static(__dirname + '/web'));
 
 

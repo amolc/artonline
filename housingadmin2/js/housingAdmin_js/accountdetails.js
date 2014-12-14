@@ -90,11 +90,6 @@ $scope.artists= {};
 }		
 
 
-
-
-
-
-
 function artistController( $rootScope, $scope, $http) {
 
 $scope.artistsd= {};
