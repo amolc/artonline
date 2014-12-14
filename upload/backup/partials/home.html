@@ -1,0 +1,9 @@
+<input type="text" ng-model="aa">
+{{aa}}
+
+
+<form enctype="multipart/form-data" action="Upload.ashx" method="post">
+<input type="file" ng-model="files" multiple />
+<button ng-click="upload()">Upload</button>
+<li ng-repeat="file in files">{{file.name}}</li>
+</form>
