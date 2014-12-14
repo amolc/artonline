@@ -162,12 +162,8 @@ box-shadow: -5px 5px 0 0 #3f8092;
 }
 /**** header closed*******/
 /*****************footer*************/
-footer
-{ 
-   background-color:#3f8092;
-   height: 306px;
-}
-footer .container{ border-top:1px solid #fff; padding-top: 50px;}
+footer {background-color:#E1E2E2; }
+footer .container{ border-top:1px solid #fff; padding:10px 0; }
 
 #footer-access-nav{
   float: left;
@@ -180,19 +176,7 @@ footer .container{ border-top:1px solid #fff; padding-top: 50px;}
 #footer-access-nav li{ float: left; margin: 0 10px;}
 #footer-access-nav a{ color: #fff; text-decoration: none; font-size: 12px;font-family: 'source_sans_prosemibold';}
 
-#footer-access-nav-right{
-  float:right;
-  display: inline; 
-  margin: 0px;
-  padding: 0px; 
-  list-style: none;  
-}
-#footer-access-nav-right li{ margin: 0 10px 20px 10px; text-align: center;}
-#footer-access-nav-right a{ color: #fff; text-decoration: none;font-size: 12px; font-family: 'source_sans_proregular';}
 
-#footer-access-nav-right a:hover {
-background-position: 0 -36px;
-}
 #footer-access-nav-sub{
   float: left;
   display: inline; 
@@ -498,7 +482,7 @@ width: 223px;
     font-size: 12px;
     text-align:center;
     border-top: 1px solid #fff;
-    padding-top: 30px;
+    padding: 10px 0;
       }
 #top{
   margin: 30px;
