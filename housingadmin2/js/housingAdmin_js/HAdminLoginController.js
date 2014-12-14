@@ -1,4 +1,4 @@
-function appController( $scope, $location,$state ,$http ){
+function appController( $scope, $location, $http ){
 	$scope.isActive = function ( path ) { 
 	
 			if ( $location.path().substr(0, path.length) == path ) {
@@ -13,16 +13,16 @@ function appController( $scope, $location,$state ,$http ){
 	if( $scope.islogin === 'true' ){
 		
 	} else {
-   		$state.go('adminlogin');
+   		$location.path('adminlogin');
     }
 
 	$scope.logout=function(){
 		window.localStorage.setItem('islogin',false);
-		$state.go('adminlogin');	
+		$location.path('/adminlogin');	
 	};
 
 }
-function adminLoginController($scope, $location,$state ,$http, $state ) {
+function adminLoginController($scope, $location, $http, $state ) {
 	$('#main_login').height( $(window).height() );
 	//window.localStorage.setItem('islogin',false);
 	$scope.islogin = window.localStorage.getItem('islogin');
@@ -53,7 +53,7 @@ function adminLoginController($scope, $location,$state ,$http, $state ) {
 					window.localStorage.setItem('logo',res.data[0].logo);
 					window.localStorage.setItem('username',user.housingid);
 					window.localStorage.setItem('islogin',true);
-					$state.go("app.home");
+					$location.path("/app/home");
 				}
 			}).error(function() {
 				alert("Please check your internet connection or data source..");

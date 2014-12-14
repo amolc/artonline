@@ -70,3 +70,24 @@ var db = mysql.createPool({
  	  	res.jsonp(resdata);
  	  });
  }; 
+
+
+ exports.login1 = function(req, res) {
+  var name=req.body.username;
+  var password=req.body.buildingpass; 
+    CRUD(db, 'tbl_users').load({housing_ass_name : name,building_password : password }, function (err, val) {  
+      var resdata={
+        status:false,
+        message :'err'
+      };
+      if(val.length>0){
+        resdata.status=true;
+        resdata.message='successfully login welcom to ..';      
+      }else{
+        resdata.status=false;
+        resdata.message='fel lösenord ange en giltig';
+      }
+        
+      res.jsonp(resdata);
+    });
+ };
