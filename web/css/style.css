@@ -113,3 +113,5 @@ background-color: #000000;
 	
   -webkit-filter: brightness(70%);
 }
+
+#artistList li a{ text-transform: capitalize;}
