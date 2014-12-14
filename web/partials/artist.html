@@ -40,48 +40,25 @@
       </div>
       <!-- images -->
       <div class="container ABC">   
-        <div class="row " style="border:1px solid blue;">
-          <div  ng-repeat="artwork in artistdetail" class="col-md-12" style="border:1px solid red;">
-          <ul>
-            <ol><h2 style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2></ol>
-        </ul>
-            </div>  
-             <div>
+        <div class="row " >
 
-                <div class="col-md-12" ng-repeat="artwork in artistdetail" style="border:1px solid blue;">
+          <div class="col-md-3">
+            <ul style="list-style:none;">
+              <li ng-repeat="artwork in artistdetail"> <a ng-click="artistwork(artwork.id)">{{artwork.fname}}</a></li>
+            </ul>
+          </div> 
+          <div class="col-md-9">
+            <div id="artistartwork">
                 <h2  style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2>
-             <div ng-repeat="artwork in artistdetail" style="padding-left: 20px; border:4px;padding-bottom: 10px;">
-             <img style="max-width: 100%;width: 150px; height: 150px " ng-src="images/img-1.jpg">
-             </div>
+              <ul class="row" style="list-style:none;" >
+               <li ng-repeat="artwork in artistdetail" class="col-md-4" style="border:4px;">
+                <img style="max-width: 100%;width: 150px; height: 150px " ng-src="images/img-1.jpg">
+               </li>
+             </ul>  
           </div>
           </div>
                 
-          <!--
-          <div class="col-sm-6 col-md-9">
-              <img src="images/art.jpg" class="img-art">
-          </div>
-          <div class="col-sm-6 col-md-3">
-              <img src="images/art-1.jpg" >
-              <div class="caption">
-                <h3>Artist : Wang Mo Ping</h3>
-                <h6>Painting : Canvas 56 x 56</h6>             
-              </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-              <img src="images/art-2.jpg">
-              <div class="caption">
-                <h3>Artist : Wang Mo Ping</h3>
-                <h6>Painting : Canvas 56 x 56</h6>  
-              </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-              <img src="images/art-3.jpg">
-              <div class="caption">
-                <h3>Artist : Wang Mo Ping</h3>
-                <h6>Painting : Canvas 56 x 56</h6>  
-              </div>
-          </div>
-   -->
+          
         </div>
 
         <hr>
