@@ -78,7 +78,7 @@ function profileController( $rootScope, $scope, $location, $http ) {
 			$('#updateprofilebtn').show();
 			jQuery('#profileform input, #profileform textarea, #profileform select').prop('disabled', false);
 		}
-		$scope.uploadupdatelogo = function(){
+		/*$scope.uploadupdatelogo = function(){
 			var oFReader = new FileReader();
 		    oFReader.readAsDataURL(document.getElementById("assologo").files[0]);
 
@@ -89,8 +89,6 @@ function profileController( $rootScope, $scope, $location, $http ) {
 		        
 		        var file = $scope.myFile;
 				if( file ){
-					window.localStorage.setItem('logo',file.name);
-					$scope.logo = window.localStorage.getItem('logo');
 					var fd = new FormData();
 					fd.append('file', file );
 	        		
@@ -109,7 +107,7 @@ function profileController( $rootScope, $scope, $location, $http ) {
 				}
 		    };
 			
-		}
+		}*/
 
 		$scope.edit = function( profile ){
 			$('#profileform input,#profileform textarea, #profileform select').prop('disabled', true );

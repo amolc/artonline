@@ -1,6 +1,6 @@
 function homeController( $rootScope, $scope, $http) {
-
-$scope.artwork= { };
+	$scope.uploadUrl = uploadUrl;
+	$scope.artwork= { };
 
 	$http.get(baseURL + 'getartwork').success(function(res) {
 				$scope.artwork = res;
