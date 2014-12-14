@@ -1,8 +1,8 @@
-function accessController( $rootScope, $scope, $location, $http ) {
+function accessController( $rootScope, $scope, $location, $http, $state ) {
 	$scope.logout=function(){
 		window.localStorage.setItem('islogin',false);
 		//$location.path('/icefire_web');	
-		window.location.replace('/icefire_web');
+		$state.go('adminlogin');
 	};		
 }
 function profileController( $rootScope, $scope, $location, $http ) {
