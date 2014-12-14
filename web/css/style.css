@@ -1,23 +1,9 @@
 @font-face {
-    font-family: 'DINCond-Bold'; 
-    src: url('fonts/DINCond-Bold.eot'); /* IE9 Compatibility Modes */
-    src: url('/fonts/DINCond-Bold.eot?') format('eot'),  /* IE6-IE8 */
-    url('../fonts/DINCond-Bold.otf') format('otf'), 
-    url('../fonts/DINCond-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
-    }
-@font-face {
 	font-family: 'DINCond-Bold';
 	src: url('fonts/DINCond-Bold.eot');
 	src: url('fonts/DINCond-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DINCond-Bold.woff') format('woff'), url('fonts/DiCnBd__.ttf') format('truetype'), url('fonts/DiCnBd__.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-
-
-@font-face {
-	font-family: 'font';
-	src: url('fonts/font.eot');
-	src: local('font'), url('fonts/font.woff') format('fonts/woff'), url('fonts/font.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'source_sans_prolight';
@@ -101,15 +87,7 @@ border-radius: 0px;
 .row-3{padding-bottom: 70px;}
 .row-4{padding-top: 70px;padding-bottom: 70px;}
 .page-123{max-width: 955px; color:#2a2a2a;font-size: 24px;background-color:#fff;margin-top: 5px;min-height: 200px;}
-footer{border-top: 10px solid #282626;
-/* height: 50px; */
-/* background-color: red; */
-bottom: 0px;
-left: 0px;
-right: 0px;
-margin-bottom: 0px;
-/* min-height: 150px; */
-height: 150px;}
+footer{border-top: 10px solid #282626; }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
 color: #fff;
