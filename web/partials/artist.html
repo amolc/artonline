@@ -44,15 +44,15 @@
 
           <div class="col-md-3">
             <ul style="list-style:none;">
-              <li ng-repeat="artwork in artistdetail"> <a ng-click="artistwork(artwork.id)">{{artwork.fname}}</a></li>
+              <li ng-repeat="artist in artistdetail"> <a ng-click="artistwork(artist.id, artist.fname )">{{artist.fname}}</a></li>
             </ul>
           </div> 
           <div class="col-md-9">
             <div id="artistartwork">
-                <h2  style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2>
+                <h2  style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artistname}}</h2>
               <ul class="row" style="list-style:none;" >
-               <li ng-repeat="artwork in artistdetail" class="col-md-4" style="border:4px;">
-                <img style="max-width: 100%;width: 150px; height: 150px " ng-src="images/img-1.jpg">
+               <li ng-repeat="artwork in artworks" class="col-md-4" style="border:4px;">
+                <img style="max-width: 100%;width: 150px; height: 150px; padding-bottom:10px;" ng-src="./uploads/{{artwork.name}}">
                </li>
              </ul>  
           </div>

@@ -176,6 +176,7 @@ app.post('/api/pushnotification', push.iphonenotify);
 app.post('/api/addetails', addartist.addetails);
 app.post('/api/addartwork', addartist.addartwork);
 app.get('/api/getartwork',addartist.getartwork);
+app.get('/api/getartworkbyid/:artistid',addartist.getartworkbyid);
 app.get('/api/getartists',addartist.getartists);
 
 app.get('/api/artworkdetails/:id',addartist.artworkdetails);
