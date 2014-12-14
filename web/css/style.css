@@ -44,6 +44,7 @@
 .fontsforweb_fontid_1575 {
 	font-family: 'font' !important;
 }
+body{ font-size: 14px;}
 h3{font-family: 'source_sans_prosemibold';font-size: 16px;margin-top: 10px;}
 h1{font-family: 'DINCond-Bold';font-size: 33px;margin-top: 10px;}
 h2{font-family: 'DINCond-Bold';font-size: 26px;margin-top: 10px;}
@@ -71,8 +72,8 @@ hr{border-top: 1px solid;margin-top: 35px;}
 .nav-pills>li.active>a:hover{color: #fff;font-size: 33px;background-color:#000000;font-family: 'DINCond-Bold';}
 .nav-pills>li>a:hover{color: #fff;font-size: 33px;background-color:#000000;font-family: 'DINCond-Bold';}
 .bar{max-width: 1033px; color:#2a2a2a;font-size: 33px;margin-top: 76px; }
-.ABC{max-width: 1012px; color:#2a2a2a;font-size: 33px;margin-top: 5px;}
-.pagination>li>a, .pagination>li>span {position: relative;float: left;padding: 0px 5px;margin-left: -1px;line-height: 1.42857143;color: #000000;text-decoration: none;background-color: #fff;border:none;font-family: 'DINCond-Bold';}
+.ABC{max-width: 1012px; color:#2a2a2a;margin-top: 5px;}
+.pagination>li>a, .pagination>li>span {padding: 0px 5px;color: #000000;text-decoration: none;border:none;font-family: 'DINCond-Bold';font-size: 30px;}
 .form-control {
 display: block;
 width: 90%;
