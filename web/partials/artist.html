@@ -52,25 +52,22 @@
       </div>
       <!-- images -->
       <div class="container ABC">   
-        <div class="row">
-          <div class="col-md-12" ng-repeat="artwork in artistdetail">
-            <h2 style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2>
-            <!--  <div class="pull-right">
-             <img ng-src="images/img-1.jpg">
-           <h5>Painting : Canvas 96x96</h5>  
-          </div>  -->
-        </div>
-                <div>
+        <div class="row " style="border:1px solid blue;">
+          <div  ng-repeat="artwork in artistdetail" class="col-md-12" style="border:1px solid red;">
+          <ul>
+            <ol><h2 style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2></ol>
+        </ul>
+            </div>  
+             <div>
 
-                <div class="col-md-12" ng-repeat="artwork in artistdetail">
-                <h2 style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2>
-             <div ng-repeat="artwork in artistdetail" class="pull-right" style="padding-left: 20px; border:4px;padding-bottom: 10px;">
-             <img ng-src="images/img-1.jpg">
+                <div class="col-md-12" ng-repeat="artwork in artistdetail" style="border:1px solid blue;">
+                <h2  style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artwork.fname}}</h2>
+             <div ng-repeat="artwork in artistdetail" style="padding-left: 20px; border:4px;padding-bottom: 10px;">
+             <img style="max-width: 100%;width: 150px; height: 150px " ng-src="images/img-1.jpg">
              </div>
           </div>
           </div>
-          <div style="float:clear;"></div>
-
+                
           <!--
           <div class="col-sm-6 col-md-9">
               <img src="images/art.jpg" class="img-art">
