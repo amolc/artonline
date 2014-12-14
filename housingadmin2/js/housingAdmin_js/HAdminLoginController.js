@@ -22,13 +22,13 @@ function appController( $scope, $location, $http ){
 	};
 
 }
-function adminLoginController($scope, $location, $http ) {
+function adminLoginController($scope, $location, $http, $state ) {
 	$('#main_login').height( $(window).height() );
 	//window.localStorage.setItem('islogin',false);
 	$scope.islogin = window.localStorage.getItem('islogin');
 	
 	if( $scope.islogin === 'true' ){
-		$location.path("/app/home");
+		$state.go('app.artist.addartwork');
 	}
 	$scope.user = {
 		username :'ADMIN',
