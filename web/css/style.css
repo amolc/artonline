@@ -67,6 +67,7 @@ hr{border-top: 1px solid;margin-top: 35px;}
 .nav-pills>li{color: #fff;font-size: 33px;font-family: 'DINCond-Bold'; }
 .nav-pills>li.active>a{color: #fff;font-size: 33px;font-family: 'DINCond-Bold'; }
 .nav-pills>li>a{color: #fff;font-size: 33px;}
+.nav>li>a:hover, .nav>li>a:focus{ background-color:#000000; }
 .nav-pills>li.active>a:hover{color: #fff;font-size: 33px;background-color:#000000;font-family: 'DINCond-Bold';}
 .nav-pills>li>a:hover{color: #fff;font-size: 33px;background-color:#000000;font-family: 'DINCond-Bold';}
 .bar{max-width: 1033px; color:#2a2a2a;font-size: 33px;margin-top: 76px; }
