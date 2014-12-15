@@ -3,11 +3,11 @@
   		<th>Collector name</th>
   		<th>Location</th>
   		<th>Action</th>
-     <tr ng-repeat="artist in artistsd">
+     <tr ng-repeat="collector in collectors">
      
-     <td>{{artist.fname}}</td>
-      <td>{{artist.location}}</td>
-      <td><a href="#/app/artist/editartist/{{artist.id}}">Edit</a></td>	
+     <td>{{collector.name}}</td>
+      <td>{{collector.location}}</td>
+      <td><a href="#/app/collector/editcollector/{{collector.id}}">Edit</a></td>	
     </tr>
     </tbody>
 

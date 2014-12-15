@@ -88,7 +88,13 @@ $stateProvider
         .state('app.collector.listcollector', {
             url: "/listcollector",
             templateUrl: "partials/housing_admin/listcollector.html",
-            controller : 'newsfeedController2'
+            controller : 'listcollectorCtrl'
+            
+        })
+        .state('app.collector.editcollector', {
+            url: "/editcollector/:id",
+            templateUrl: "partials/housing_admin/editcollector.html",
+            controller : 'editcollectorCtrl'
             
         })
         .state('app.collector.listcollection', {

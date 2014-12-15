@@ -1,11 +1,12 @@
 <div id="bred-crum" >
-      <a href="#/app/konto" >Collector</a> &gt; <a > Add Collectors </a>
+      <a href="#/app/konto" >Collection</a> &gt; <a > Add Collectors </a>
     </div>
       <form class="form-horizontal source_sans_prosemibold" id="accountDetailsform">
         <div class="form-group" >
           <label class="col-md-4" >Collector Name :</label>
           <div  class="col-md-8" >
-                   <input type="text" class="form-control" id="field-1" placeholder="Enter First name" ng-model='add.fname'>
+                  <select class="form-control" ng-options="collector as collector.fname for collector in collectors" ng-model="selectedcollector" ng-change="changecollector( selectedcollector.id )" ></select>
+          
           </div>
       </div>
       <div class="form-group" >
