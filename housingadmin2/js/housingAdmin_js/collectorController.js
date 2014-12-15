@@ -85,6 +85,6 @@ $scope.updateCollector=function(collect){
     });
 
 	$scope.changecollector = function( collector_id ) {
-		$scope.selectedartist.id = collector_id;				
+		$scope.selectedcollector.id = collector_id;				
 	};
 }
