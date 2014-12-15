@@ -46,11 +46,21 @@
 }
  #image img{ max-width: 250px; 
 	height: auto;
-     display: -webkit-box;
+     
+}
+
+
+
+div[class*='col-'] {  
+    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     flex:1 0 auto;
 }
+
+
+
+
 
 body{ font-size: 14px;}
 h3{font-family: 'source_sans_prosemibold';font-size: 16px;margin-top: 10px;}
