@@ -44,7 +44,12 @@
 .fontsforweb_fontid_1575 {
 	font-family: 'font' !important;
 }
-img{ max-width: 100%; height: auto;}
+ .ABC img{ max-width: 250px; 
+	height: auto;
+    width: 250px;
+    height: 250px;
+
+}
 body{ font-size: 14px;}
 h3{font-family: 'source_sans_prosemibold';font-size: 16px;margin-top: 10px;}
 h1{font-family: 'DINCond-Bold';font-size: 33px;margin-top: 10px;}

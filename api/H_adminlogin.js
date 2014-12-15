@@ -8,7 +8,7 @@ var db = mysql.createPool({
  });
  var CRUD = require('mysql-crud');
  
-        var userCRUD= CRUD(db, 'tbl_users');
+        var userCRUD=CRUD(db, 'tbl_users');
 
  /*var adduuidCRUD=CRUD(db, 'tbl_notification');
  

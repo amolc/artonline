@@ -46,12 +46,12 @@ function adminLoginController($scope, $location, $http, $state ) {
 					alert(res.message);
 				} else {
 					 //  alert(res.data[0].housing_ass_id);
-					window.localStorage.setItem('contact_id',res.data[0].contact_id);
-					window.localStorage.setItem('hid',res.data[0].housing_ass_id);
-					window.localStorage.setItem('logo',res.data[0].logo);
-					window.localStorage.setItem('username',user.housingid);
+		//			window.localStorage.setItem('email',res.data[0].user_email);
+					//window.localStorage.setItem('hid',res.data[0].housing_ass_id);
+					//window.localStorage.setItem('logo',res.data[0].logo);
+					//window.localStorage.setItem('username',user.housingid);
 					window.localStorage.setItem('islogin',true);
-					$location.path("/app/home");
+					$state.go("app.home");
 				}
 			}).error(function() {
 				alert("Please check your internet connection or data source..");
