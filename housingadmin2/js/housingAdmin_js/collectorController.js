@@ -75,11 +75,12 @@ $scope.updateCollector=function(collect){
 	$scope.selectedcollector = { id : ''}
 	$scope.collectors = {};
 	$http.get(baseURL + 'getcollector').success(function(res) {
+		console.log(res);
 		//$scope.artists = res;
         if (res.status == 'false') {
             console.log(res.message);
         } else {
-            $scope.collectorss = res;
+            $scope.collectors = res;
             console.log( $scope.collectors );
         }
     });
@@ -87,4 +88,8 @@ $scope.updateCollector=function(collect){
 	$scope.changecollector = function( collector_id ) {
 		$scope.selectedcollector.id = collector_id;				
 	};
+
+
+
+
 }

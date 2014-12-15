@@ -82,7 +82,7 @@ $stateProvider
         .state('app.collector.acollector', {
             url: "/acollector",
             templateUrl: "partials/housing_admin/acollector.html",
-            controller : 'addcollectorCtrl'
+            controller : 'addcollectionController'
             
         })
         .state('app.collector.listcollector', {
