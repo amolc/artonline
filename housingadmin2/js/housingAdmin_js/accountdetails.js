@@ -162,7 +162,7 @@ function editartworkController( $rootScope, $scope, $http,$stateParams) {
 
 
 
-function editartistController( $rootScope, $scope, $http,$stateParams) {
+function editartistController( $rootScope, $scope, $http,$stateParams,$state) {
 
 			 
 	$scope.art={		
@@ -186,7 +186,7 @@ function editartistController( $rootScope, $scope, $http,$stateParams) {
 				if (res.status == false) {
 					alert(res.message);
 				} else {
-					//$state.go("menu.manstate");
+					$state.go("app.artist.listartist");
 				}
 			}).error(function() {
 				alert("Please check your internet connection or data source..");
