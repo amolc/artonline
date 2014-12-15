@@ -1,13 +1,16 @@
 var http = require('http');
 var mysql = require('mysql');
 var db = mysql.createPool({
-	database : 'icefire',
-     user : 'icefire2',
-	password : 'ferrari4321',
+	database : 'artonline',
+     user : 'artonline',
+	password : '3cXWOqeaf',
     host :'localhost',
  });
  var CRUD = require('mysql-crud');
- var adduuidCRUD=CRUD(db, 'tbl_notification');
+ 
+        var userCRUD= CRUD(db, 'tbl_users');
+
+ /*var adduuidCRUD=CRUD(db, 'tbl_notification');
  
  
  exports.login = function(req, res) {
@@ -71,13 +74,14 @@ var db = mysql.createPool({
  	  });
  }; 
 
-
- exports.login1 = function(req, res) {
+      */
+ exports.login = function(req, res) {
   var email=req.body.email;
   var password=req.body.password;
   console.log(email);
    console.log(password);
-    CRUD(db, 'tbl_users').load({user_email : email,user_password : password }, function (err, val) {  
+    userCRUD.load({user_email : email,user_password : password }, function (err, val) {  
+        console.log(val);
       var resdata={
         status:false,
         message :'err'

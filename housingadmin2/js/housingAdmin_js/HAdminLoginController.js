@@ -41,6 +41,7 @@ function adminLoginController($scope, $location, $http, $state ) {
 				console.log(user);     
 			$http.post(baseURL + 'HousingAdminLogin', user).success(function(res) {
 				$scope.response = res;
+				console.log(res);
 				if (res.status == false) {
 					alert(res.message);
 				} else {
