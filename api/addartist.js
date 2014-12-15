@@ -79,9 +79,18 @@ exports.addetails= function (req,res){
 
 };
 
+exports.getartworkbyid = function(req, res) {
+    var artistid = req.params.artistid; 
+    console.log( artistid );
+    var query = "SELECT * FROM tbl_artwork WHERE artist="+artistid;  
+    db.query( query, function (err, val) {  
+        res.jsonp(val);
+      });    
+};
 
 exports.getartwork = function(req, res) {
-    var housingid = req.params.hid; 
+    var artistid = req.params.artistid; 
+    console.log( artistid );
     var query = "SELECT * FROM tbl_artwork";  
     db.query( query, function (err, val) {  
         res.jsonp(val);

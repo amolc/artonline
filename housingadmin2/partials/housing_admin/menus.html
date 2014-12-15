@@ -1,14 +1,14 @@
-<header class="logo-env"> 
-   
+<header class="logo-env">
+
     <div class="container">
         <div>
             <a href="/icefire_web" ><img src="css/images/IMG_11122014_143013.png"></a>
         </div>
-        <div>            
+        <div>
 
-            <ul id="access-nav" ng-controller="accessController">    
+            <ul id="access-nav" ng-controller="accessController">
                 <li id="set-font-logout" ><a ng-click="logout()"> Log Out </a></li>
-            </ul> 
+            </ul>
         </div>
     </div>
 
@@ -18,7 +18,7 @@
 <div id="rightback"></div>
 <div class="container" >
 <div class="row row-eq-height">
-	
+
 	<div class="col-md-2" >
  		<ul id="main-nav">
 			<!-- <li><a ng-class="{ active: isActive('/app/home')}" href="#/app/home">Home</a></li> -->
@@ -27,11 +27,11 @@
 			<!-- <li><a ng-class="{ active: isActive('/app/styrelsen')}" class="styrelsen" href="#/app/styrelsen" >Sample </a></li>
 			<li><a ng-class="{ active: isActive('/app/kontakter')}" class="kontakter" href="#/app/kontakter">Contact</a></li>
 			<li><a ng-class="{ active: isActive('/app/help')}" class="help" href="#/app/help">Help</a></li> -->
-			
+
 			</ul>
  	</div>
-  
-  <div class="col-md-10" ui-view> 
+
+  <div class="col-md-10" ui-view>
   	<div id="main-content" >
   			<form class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">
 		  	<div class="form-group" style="margin-bottom:50px;">
@@ -44,8 +44,8 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
   							<img id="associationlogo" src="logos/{{profile.logo}}" />
                         </div>
                         <input type="file" id="assologo" file-model="myFile" onchange="angular.element(this).scope().uploadupdatelogo()"  />
-                        
-                    </div>                    
+
+                    </div>
 			  	</div>
 	 		</div>
 
@@ -66,8 +66,8 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
 	 			<div class="col-md-9" >
 		 			<input class="form-control" ng-model="profile.org_number" value="{{profile.org_number}}" disabled />
 		  		</div>
-	 		</div>  --> 
-	 		
+	 		</div>  -->
+
 		  	<div class="form-group" >
 		  		<label class="col-md-3"  >Lösenord till appen : </label>
 		  		<div  class="col-md-9" >
@@ -79,12 +79,12 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
 		  		<label class="col-md-3" > Län  :</label>
 		  		<div  class="col-md-9" >
 		  		<select class="form-control" ng-options="state as state.state_name for state in states" ng-model="selectedCounty" ng-change="updatemumciplatiesciew( selectedCounty.state_id )" disabled=""></select>
-		 		</div>	  		
+		 		</div>
 		  	</div>
 		  	<div class="form-group" >
 		  		<label class="col-md-3" >Kommun  :</label>
 		  		<div  class="col-md-9" >
-		  			<select class="form-control" ng-options="munci as munci.m_name for munci in muncies" ng-model="selectedMunci" disabled=""></select>		 			
+		  			<select class="form-control" ng-options="munci as munci.m_name for munci in muncies" ng-model="selectedMunci" disabled=""></select>
 		  		</div>
 	 		</div>
 
@@ -96,14 +96,14 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
 	 		</div>
 
 		  	<div class="form-group" >
-		  		<label  class="col-md-3" > Postnummer  :</label> 
+		  		<label  class="col-md-3" > Postnummer  :</label>
 		  		<div  class="col-md-9" >
 		 			<input type="text" class="form-control" ng-model="profile.zipcode" value="{{profile.zipcode}}" disabled />
 		  		</div>
 	 		</div> -->
 
 			<!--<div class="form-group" >
-		  		<label  class="col-md-3" > Telefon  :</label> 
+		  		<label  class="col-md-3" > Telefon  :</label>
 		  		<div  class="col-md-9" >
 		 			<input class="form-control" ng-model="profile.telephone_no" value="{{profile.telephone_no}}" disabled />
 		  		</div>
@@ -113,22 +113,22 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
 		  		<label class="col-md-3" >Beskrivning av föreningen  :</label>
 	 			<div  class="col-md-9" >
 		 			<textarea class="form-control" ng-model="profile.description" rows="10" disabled >{{profile.description}}</textarea>
-		  		</div>	  		
+		  		</div>
 		  	</div>
 
 		  	<div class="form-group" >
 		  	 	<div class="col-md-offset-3 col-md-9">
 		  			<a id="editprofilebtn" class="btn-default" ng-click="enableedit()" ><img src="img/news_edit.jpg" /></a>
 		  			<button id="updateprofilebtn" type="button" class="btn btn_back add-button" ng-click="edit(profile)" style="display:none" >Spara</button>
-		 			
-		 		</div>		
-		  	</div>	
+
+		 		</div>
+		  	</div>
 
 	  	</form>
 
-	</div>		  	
+	</div>
   </div>
-  
+
 </div>
 
 
@@ -136,26 +136,22 @@ Ifall logga saknas så visas istället föreningen namn.</span></a></label>
 </div>
 <footer >
   <div class="container"  >
-    
+
       <ul id="footer-access-nav">
-        <li><a href="/icefire_web#">HEM</a></li> 
-        <li><a href="/icefire_web/#/Howitwork">SA FUNKAR DET</a></li>
-        <li><a href="/icefire_web/#/Help">HJALP</a></li> 
-        <li><a href="/icefire_web/#/Map">OM BOSTADSRATTAPPEN</a></li> 
-        <li><a href="/housingadmin2">LOGGA IN</a></li>
-        <li><a href="/icefire_web/#/sign-up ">ANSLUT</a></li>
-      </ul>
+        <li><a href="/icefire_web#">Home</a></li>
+        <li><a href="/icefire_web/#/Howitwork">About Us</a></li>
       
+      </ul>
+
       <div class="clear"></div>
-    
+
     </div>
-    
-  
+
+
    <div id="copy" class="container" >
     Copyright   &copy;  2014.
-    
+
    </div>
 
-  
-  </footer>
 
+  </footer>

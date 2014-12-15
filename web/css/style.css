@@ -44,6 +44,7 @@
 .fontsforweb_fontid_1575 {
 	font-family: 'font' !important;
 }
+img{ max-width: 100%; height: auto;}
 body{ font-size: 14px;}
 h3{font-family: 'source_sans_prosemibold';font-size: 16px;margin-top: 10px;}
 h1{font-family: 'DINCond-Bold';font-size: 33px;margin-top: 10px;}
@@ -112,3 +113,5 @@ background-color: #000000;
 	
   -webkit-filter: brightness(70%);
 }
+
+#artistList li a{ text-transform: capitalize;}
