@@ -188,7 +188,9 @@ app.get('/api/artistdetails/:id',addartist.artistdetails);
 app.get('/api/getcollector',collector.getcollector);
 app.post('/api/addcollector',collector.addcollector);
 app.get('/api/collectordetails/:id',collector.collectordetails);
-app.post('/api/updatecollector',collector.updatecollector)
+app.post('/api/updatecollector',collector.updatecollector);
+
+app.post('/api/addcollection',collector.addcollection);
 
 
 app.listen(9000);

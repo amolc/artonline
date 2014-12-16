@@ -2,9 +2,7 @@ function addcollectorCtrl( $rootScope, $scope, $http) {
 	
 	$scope.addCollector = function(add) 
 	{
-	    	console.log(add);	
-
-	     
+	     console.log(add);	     
 		$http.post(baseURL + 'addcollector', add).success(function(res) {
 	 	}) 
 	}
@@ -34,6 +32,10 @@ function addcollectorCtrl( $rootScope, $scope, $http) {
 
 
 	}
+
+
+
+
 	 function editcollectorCtrl($rootScope,$scope,$http,$state,$stateParams)
 	 {
 	 		$scope.collect={		
@@ -71,7 +73,7 @@ $scope.updateCollector=function(collect){
 
 
 
-	 function addcollectionController( $rootScope, $scope, $http, $state ) {
+	 function addcollectionController($rootScope, $scope, $http, $state) {
 	$scope.selectedcollector = { id : ''}
 	$scope.collectors = {};
 	$http.get(baseURL + 'getcollector').success(function(res) {
@@ -90,6 +92,51 @@ $scope.updateCollector=function(collect){
 	};
 
 
+	$scope.addCollection = function( add ) {
+		var formdata = new FormData();
+		formdata.append('artist', $scope.selectedcollector.id);
+		formdata.append('title', add.title );
+		formdata.append('type', add.type );
+		formdata.append('name', add.name );
+		formdata.append('size', add.size );
+		console.log( $scope.myFile );
+		var file = $scope.myFile;
+		console.log(formdata);
+		if( file ){
+			//artwork.file = file.name	
+			formdata.append('file', file );
+			console.log( formdata );
 
+		}
+	
+		$http.post(baseURL + 'addcollection', formdata, { transformRequest: angular.identity,
+		            	headers: {'Content-Type': undefined } } ).success(function(res) {
+			
+			/*if( res.status == true )
+				$state.go('app.collection.collectionlist'); */
+	 	}) 
+	};
+/*
+	$scope.uploadupdatelogo = function(){
+			var oFReader = new FileReader();
+		    oFReader.readAsDataURL(document.getElementById("assologo").files[0]);
 
+		    oFReader.onload = function (oFREvent) {
+		    	document.getElementById("associationlogo").src = oFREvent.target.result;
+		        
+		        
+		        var file = $scope.myFile;
+				if( file ){
+					window.localStorage.setItem('logo',file.name);
+					$scope.logo = window.localStorage.getItem('logo');
+					var fd = new FormData();
+					
+				}
+		    };
+			
+		}
+	*/		
 }
+
+
+

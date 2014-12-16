@@ -1,5 +1,5 @@
 <div id="bred-crum" >
- 			<a href="#/app/konto" >Collector</a> &gt; <a > Add Artwork </a>
+ 			<a href="#/app/konto" >Collector</a> &gt; <a > Add Collection </a>
  		</div>
 	  	<form class="form-horizontal source_sans_prosemibold" id="accountDetailsform">
 	  		
@@ -41,9 +41,19 @@
 			  	</div>
 	 		</div>
 	 		
-	 		
+	 			<div class="form-group" >
+		  		<label class="col-md-4" >Upload :</label>
+			  	<div  class="col-md-8" >
+              <img src="" id="associationlogo" />
+              <input type="file" id="assologo" file-model="myFile" onchange="angular.element(this).scope().uploadupdatelogo()"  />
+			  	</div>
+	 		</div>
+
+
+
+
 	 			 		
-<div class="form-group" >
+		<div class="form-group" >
 		 
 			  	<div  class="col-md-3 " >
                   <button type="submit" class="btn btn_back" ng-click='addCollection(add)'>ADD</button>

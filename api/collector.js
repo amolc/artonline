@@ -9,6 +9,7 @@ var db = mysql.createPool({
  });
  var CRUD = require('mysql-crud');
 var addcollectorCrud=CRUD(db, 'tbl_collector');
+var addcollectionCrud=CRUD(db, 'tbl_collection');
 
 exports.addcollector= function (req,res){
 console.log(req.body.fname);
@@ -65,3 +66,51 @@ exports.updatecollector = function(req, res) {
              }
       });
    };
+exports.addcollection= function (req,res){
+
+var title = req.body.title;
+    var type = req.body.type;
+    var size = req.body.size;
+    var name = req.body.name;
+    var fs = require('fs');
+      
+    var tmp_path = req.files.file.path;
+    var artfilename = req.files.file.name ;
+    console.log( 'path='+tmp_path );
+console.log(type);
+console.log(size);
+console.log(title);
+console.log(name);
+
+
+
+ var target_path = './uploads/' + req.files.file.name;
+    console.log(req.files.file.name);
+    // move the file from the temporary location to the intended location
+    fs.rename(tmp_path, target_path, function(err) {
+        if (err) throw err;
+        // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
+        fs.unlink(tmp_path, function() {
+            if (err) throw err;
+            //res.send('File uploaded to: ' + target_path + ' - ' + req.files.file.size + ' bytes');
+        });
+    });
+
+addcollectionCrud.create({ name : artfilename , artistname:req.body.artist,title: title,type: type,size: size}, function (err, vals){
+      //console.log(vals);
+      if( err ){
+        var resdata={
+          status:false,
+          message :'err'
+          };
+      } else {
+        var resdata={
+          status:true,          
+        };  
+      }     
+      
+
+      res.jsonp(resdata);   
+    });
+
+};
