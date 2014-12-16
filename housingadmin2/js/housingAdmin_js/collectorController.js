@@ -116,7 +116,7 @@ $scope.updateCollector=function(collect){
 				$state.go('app.collection.collectionlist'); */
 	 	}) 
 	};
-/*
+
 	$scope.uploadupdatelogo = function(){
 			var oFReader = new FileReader();
 		    oFReader.readAsDataURL(document.getElementById("assologo").files[0]);
@@ -135,7 +135,7 @@ $scope.updateCollector=function(collect){
 		    };
 			
 		}
-	*/		
+		
 }
 
 

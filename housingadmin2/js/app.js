@@ -167,8 +167,6 @@ $stateProvider
     }*/            
     })
   }
-}).directive('',function(angular){
-    return 
 })
 .directive('fileModel', function ($parse) {
     return function(scope, element, attrs) {

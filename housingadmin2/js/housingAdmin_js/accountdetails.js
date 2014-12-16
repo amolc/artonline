@@ -1,4 +1,4 @@
-function newartistController( $rootScope, $scope, $http) {
+function newartistController( $rootScope, $scope, $http, $state) {
 	$scope.artist = {
 		mobileno : ''		
 	};
@@ -6,7 +6,9 @@ function newartistController( $rootScope, $scope, $http) {
 		$http.post(baseURL + 'addetails', artist).success(function(res) {
 	 	})
 	};
-
+	
+ 
+	
 }
 function addartworkController( $rootScope, $scope, $http, $state ) {
 	$scope.selectedartist = { id : ''}
@@ -32,13 +34,13 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 		formdata.append('title', artwork.title );
 		formdata.append('type', artwork.type );
 		formdata.append('size', artwork.size );
-		console.log( $scope.myFile );
+		console.log($scope.myFile);
 		var file = $scope.myFile;
 		
 		if( file ){
 			//artwork.file = file.name	
 			formdata.append('file', file );
-			console.log( formdata );
+			console.log(formdata);
 
 		}
 		
