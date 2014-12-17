@@ -21,23 +21,27 @@ exports.addetails= function (req,res){
     	   var mobileno=req.body.mobileno;
     	   var email=req.body.email;
     	    var artdes=req.body.artdes;
-
+            var imgname = "abcd.png";
     	console.log(name);
+      console.log(location);
     
 
 
-    	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes}, function (err, vals){
+    	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes , img_name:imgname}, function (err, vals){
  	    	console.log(vals)
- 			
- 			var resdata={
- 	  		status:false,
- 	  		message :'err'
- 	  	};
-
-
+      if( err ){
+        var resdata={
+          status:false,
+          message :'err'
+          };
+      } else {
+        var resdata={
+          status:true,          
+        };  
+      }
  			res.jsonp(resdata);		
  		});
-
+    
     };
 
 
@@ -165,10 +169,11 @@ exports.artistdetails = function(req, res) {
  }; 
 
 
-exports.cassie = function(req,res){
+/*exports.cassie = function(req,res){
 var query = " SELECT * FROM tbl_artwork WHERE artist = '19' ";
 
 db.query( query, function (err, val) {  
         res.jsonp(val);
       });    
 }
+*/

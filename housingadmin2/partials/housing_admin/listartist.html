@@ -5,11 +5,13 @@
   		<tbody>
   		<th>Artist name</th>
   		<th>Location</th>
+      <th>Image Name</th>
   		<th>Action</th>
      <tr ng-repeat="artist in artistsd">
      
      <td>{{artist.fname}}</td>
       <td>{{artist.location}}</td>
+      <td>{{artist.img_name}}</td>
       <td><a href="#/app/artist/editartist/{{artist.id}}">Edit</a></td>	
     </tr>
     </tbody>

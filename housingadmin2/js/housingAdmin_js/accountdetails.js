@@ -3,13 +3,42 @@ function newartistController( $rootScope, $scope, $http, $state) {
 		mobileno : ''		
 	};
 	$scope.addArtist = function(artist) {
-		$http.post(baseURL + 'addetails', artist).success(function(res) {
-	 	})
-	};
-	
- 
-	
+			var formdata = new FormData();
+			formdata.append('fname',artist.fname);
+			formdata.append('location',artist.location);
+			formdata.append('mobileno',artist.mobileno);
+			formdata.append('email',artist.email);				
+			formdata.append('artdes',artist.artdes);
+			console.log($scope.myFile);
+
+
+		$http.post(baseURL + 'addetails', formdata, { transformRequest: angular.identity,
+		      headers: {'Content-Type': undefined } } ).success(function(res){
+	 				
+				$scope.response = res;
+				console.log(res);
+				if (res.status == false) {
+					alert(res.message);
+				} else {
+					$state.go("app.artist.listartist");
+				}
+
+	 	}).error(function() {
+				alert("Please check your internet connection or data source..");
+			});
+
+	 			$scope.uploadupdatelogo = function(){
+			var oFReader = new FileReader();
+		    oFReader.readAsDataURL(document.getElementById("assologo").files[0]);
+
+		    oFReader.onload = function (oFREvent) {
+		    	document.getElementById("associationlogo").src = oFREvent.target.result;
+		       		}		
 }
+	};
+}
+
+
 function addartworkController( $rootScope, $scope, $http, $state ) {
 	$scope.selectedartist = { id : ''}
 	$scope.artists = {};
@@ -58,19 +87,10 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 
 		    oFReader.onload = function (oFREvent) {
 		    	document.getElementById("associationlogo").src = oFREvent.target.result;
-		        
-		        
-		        var file = $scope.myFile;
-				if( file ){
-					window.localStorage.setItem('logo',file.name);
-					$scope.logo = window.localStorage.getItem('logo');
-					var fd = new FormData();
-					
-				}
-		    };
-			
-		}
+		       		}
 		
+}
+
 }
 
 function artworkController( $rootScope, $scope, $http) {
