@@ -82,13 +82,19 @@ $stateProvider
         .state('app.collector.acollector', {
             url: "/acollector",
             templateUrl: "partials/housing_admin/acollector.html",
-            controller : 'addcollectorCtrl'
+            controller : 'addcollectionController'
             
         })
         .state('app.collector.listcollector', {
             url: "/listcollector",
             templateUrl: "partials/housing_admin/listcollector.html",
-            controller : 'newsfeedController2'
+            controller : 'listcollectorCtrl'
+            
+        })
+        .state('app.collector.editcollector', {
+            url: "/editcollector/:id",
+            templateUrl: "partials/housing_admin/editcollector.html",
+            controller : 'editcollectorCtrl'
             
         })
         .state('app.collector.listcollection', {
@@ -161,8 +167,6 @@ $stateProvider
     }*/            
     })
   }
-}).directive('',function(angular){
-    return 
 })
 .directive('fileModel', function ($parse) {
     return function(scope, element, attrs) {

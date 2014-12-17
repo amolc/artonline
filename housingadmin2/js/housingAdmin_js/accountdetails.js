@@ -1,4 +1,4 @@
-function newartistController( $rootScope, $scope, $http) {
+function newartistController( $rootScope, $scope, $http, $state) {
 	$scope.artist = {
 		mobileno : ''		
 	};
@@ -6,7 +6,9 @@ function newartistController( $rootScope, $scope, $http) {
 		$http.post(baseURL + 'addetails', artist).success(function(res) {
 	 	})
 	};
-
+	
+ 
+	
 }
 function addartworkController( $rootScope, $scope, $http, $state ) {
 	$scope.selectedartist = { id : ''}
@@ -32,13 +34,13 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 		formdata.append('title', artwork.title );
 		formdata.append('type', artwork.type );
 		formdata.append('size', artwork.size );
-		console.log( $scope.myFile );
+		console.log($scope.myFile);
 		var file = $scope.myFile;
 		
 		if( file ){
 			//artwork.file = file.name	
 			formdata.append('file', file );
-			console.log( formdata );
+			console.log(formdata);
 
 		}
 		
@@ -56,28 +58,14 @@ function addartworkController( $rootScope, $scope, $http, $state ) {
 
 		    oFReader.onload = function (oFREvent) {
 		    	document.getElementById("associationlogo").src = oFREvent.target.result;
-		        //$scope.profile.logo = oFREvent.target.result;
-		        //document.getElementById("associationlogoinput").value = oFREvent.target.result;
+		        
 		        
 		        var file = $scope.myFile;
 				if( file ){
 					window.localStorage.setItem('logo',file.name);
 					$scope.logo = window.localStorage.getItem('logo');
 					var fd = new FormData();
-					/*fd.append('file', file );
-	        		
-		        	$http.post( baseURL + 'uploadlogo/', fd, { transformRequest: angular.identity,
-		            	headers: {'Content-Type': undefined } } ).success(function(res) {
-						
-						if (res.status == 'false') {
-						} else {
-							$scope.profile.logo = file.name;
-							$http.post(baseURL + 'UpdateProfile/', $scope.profile );
-						}
-						
-					}).error(function() {
-						alert("Upload Failed.");
-					});*/
+					
 				}
 		    };
 			
@@ -162,7 +150,7 @@ function editartworkController( $rootScope, $scope, $http,$stateParams) {
 
 
 
-function editartistController( $rootScope, $scope, $http,$stateParams) {
+function editartistController( $rootScope, $scope, $http,$stateParams,$state) {
 
 			 
 	$scope.art={		
@@ -186,7 +174,7 @@ function editartistController( $rootScope, $scope, $http,$stateParams) {
 				if (res.status == false) {
 					alert(res.message);
 				} else {
-					//$state.go("menu.manstate");
+					$state.go("app.artist.listartist");
 				}
 			}).error(function() {
 				alert("Please check your internet connection or data source..");

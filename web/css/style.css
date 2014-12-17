@@ -8,7 +8,7 @@
 @font-face {
 	font-family: 'source_sans_prolight';
 	src: url('fonts/sourcesanspro-light-webfont.eot');
-	src: url('fonts/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-light-webfont.woff') format('woff'), url('fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+	src: url('fonts/sourcesanspro-light-webfont.eqwertyot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-light-webfont.woff') format('woff'), url('fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -48,16 +48,6 @@
 	height: auto;
      
 }
-
-
-
-div[class*='col-'] {  
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    flex:1 0 auto;
-}
-
 
 
 
@@ -133,9 +123,35 @@ background-color: #000000;
 
 #artistList li a{ text-transform: capitalize;}
 
-div[class*='col-'] {  
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    flex:1 0 auto;
+
+
+.imgWrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
 }
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;
+  */
+}
+
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
+

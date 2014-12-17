@@ -34,7 +34,7 @@ accountdetails = require('./api/accountdetails');
 submitInput=require('./api/submitinput');
 */
 addartist=require('./api/addartist');
-
+collector=require('./api/collector.js');
 //uploaddata=require('./api/submitinput');
 
 // start housing admin
@@ -183,5 +183,15 @@ app.get('/api/artworkdetails/:id',addartist.artworkdetails);
 app.post('/api/updateartwork', addartist.updateartwork);
 app.post('/api/updateartist', addartist.updateartist);
 app.get('/api/artistdetails/:id',addartist.artistdetails);
+
+
+app.get('/api/getcollector',collector.getcollector);
+app.post('/api/addcollector',collector.addcollector);
+app.get('/api/collectordetails/:id',collector.collectordetails);
+app.post('/api/updatecollector',collector.updatecollector);
+
+app.post('/api/addcollection',collector.addcollection);
+
+
 app.listen(9000);
 console.log('Listening.. on port 9000...'); 

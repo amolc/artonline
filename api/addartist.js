@@ -139,7 +139,7 @@ exports.updateartist = function(req, res) {
    var id=req.body.id;
     console.log(id);
     console.log(req.body.fname);
-  addartistCrud.update({'id' : id}, {fname:req.body.fname,location:req.body.location,mobileno:req.body.mobileno,desc:req.body.desc}, function (err, vals) {
+ /* addartistCrud.update({'id' : id}, {fname:req.body.fname,location:req.body.location,mobileno:req.body.mobileno,desc:req.body.desc}, function (err, vals) {
     if(parseInt(vals.affectedRows)>0){
         var resdata={status:true,
               message:'artist successfully updated'};
@@ -149,7 +149,7 @@ exports.updateartist = function(req, res) {
               message:'artist not updated'};
               res.jsonp(resdata);
              }
-      });
+      });   */
    };
 
 
