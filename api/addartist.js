@@ -28,13 +28,16 @@ exports.addetails= function (req,res){
 
     	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes}, function (err, vals){
  	    	console.log(vals)
- 			
- 			var resdata={
- 	  		status:false,
- 	  		message :'err'
- 	  	};
-
-
+      if( err ){
+        var resdata={
+          status:false,
+          message :'err'
+          };
+      } else {
+        var resdata={
+          status:true,          
+        };  
+      }
  			res.jsonp(resdata);		
  		});
 

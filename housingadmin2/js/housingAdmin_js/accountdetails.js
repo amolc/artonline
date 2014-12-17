@@ -4,7 +4,18 @@ function newartistController( $rootScope, $scope, $http, $state) {
 	};
 	$scope.addArtist = function(artist) {
 		$http.post(baseURL + 'addetails', artist).success(function(res) {
-	 	})
+	 				
+$scope.response = res;
+				console.log(res);
+				if (res.status == false) {
+					alert(res.message);
+				} else {
+					$state.go("app.collector.listcollector");
+				}
+
+	 	}).error(function() {
+				alert("Please check your internet connection or data source..");
+			});
 	};
 	
  
