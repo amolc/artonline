@@ -23,8 +23,11 @@ exports.addetails= function (req,res){
     	    var artdes=req.body.artdes;
 
     	console.log(name);
+    
+
+
     	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes}, function (err, vals){
- 		//	console.log(vals)
+ 	    	console.log(vals)
  			
  			var resdata={
  	  		status:false,
@@ -160,3 +163,12 @@ exports.artistdetails = function(req, res) {
         res.jsonp(val[0]);
       });  
  }; 
+
+
+exports.cassie = function(req,res){
+var query = " SELECT * FROM tbl_artwork WHERE artist = '19' ";
+
+db.query( query, function (err, val) {  
+        res.jsonp(val);
+      });    
+}

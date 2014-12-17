@@ -119,8 +119,8 @@ function editartworkController( $rootScope, $scope, $http,$stateParams) {
 			 
 	$scope.artdetail={		
 	};
-		var id=$stateParams.id;		
-		console.log(id);		
+			var id=$stateParams.id;		
+			console.log(id);		
 			 $http.get(baseURL + 'artworkdetails/'+id).success(function(res) {
 			 	console.log(res);
 				 $scope.response = res;
