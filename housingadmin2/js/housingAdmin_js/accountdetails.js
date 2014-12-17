@@ -3,9 +3,18 @@ function newartistController( $rootScope, $scope, $http, $state) {
 		mobileno : ''		
 	};
 	$scope.addArtist = function(artist) {
-		$http.post(baseURL + 'addetails', artist).success(function(res) {
+			var formdata = new FormData();
+			formdata.append('fname',artist.fname);
+			formdata.append('location',artist.location);
+			formdata.append('mobileno',artist.mobileno);
+			formdata.append('email',artist.email);				
+			formdata.append('artdes',artist.artdes);
+				$scope.myFile	
+
+		$http.post(baseURL + 'addetails', formdata, { transformRequest: angular.identity,
+		            	headers: {'Content-Type': undefined } } ).success(function(res){
 	 				
-$scope.response = res;
+				$scope.response = res;
 				console.log(res);
 				if (res.status == false) {
 					alert(res.message);

@@ -21,12 +21,13 @@ exports.addetails= function (req,res){
     	   var mobileno=req.body.mobileno;
     	   var email=req.body.email;
     	    var artdes=req.body.artdes;
-
+            var imgname = "abcd";
     	console.log(name);
+      console.log(location);
     
 
 
-    	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes}, function (err, vals){
+    	addartistCrud.create({fname: name ,location: location ,mobileno:mobileno ,email:email ,desc:artdes , img_name:imgname}, function (err, vals){
  	    	console.log(vals)
       if( err ){
         var resdata={
@@ -40,7 +41,7 @@ exports.addetails= function (req,res){
       }
  			res.jsonp(resdata);		
  		});
-
+    
     };
 
 
