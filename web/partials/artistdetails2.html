@@ -1,0 +1,32 @@
+<div>
+		<ul style="float:left;">        
+        <li><a href="#">Animals</a></li>
+        <li><a href="#">Balls</a></li>
+        <li><a href="#">Collection</a></li>
+        <li><a href="#">Shapes</a></li>
+        <li><a href="#">Still Life</a></li>
+        <li><a href="#">Fantasy</a></li>
+        </ul>
+<div class="artdimg">
+<img src="images/aWar2.gif.jpg"></img>
+</div>
+<div style="clear:both"></div>
+
+<hr>
+<h3>Related Artwork</h3>
+<div>
+            <ul style="list-style:none;" id="artistList">
+              <li ng-repeat="artist in artistdetail"> <a ng-click="artistwork(artist.id, artist.fname )">{{artist.fname}}</a></li>
+            </ul>
+          </div> 
+          <div>
+            <div id="artistartwork">
+               <ul class="row" style="list-style:none;" >
+               <li ng-repeat="artwork in artworks" style="border:4px;">
+                <img style="max-width: 100%;width: 150px; height: 150px; padding-bottom:10px;" ng-src="./uploads/{{artwork.name}}">
+               </li>
+             </ul>  
+          </div>
+          </div>
+                
+</div>
