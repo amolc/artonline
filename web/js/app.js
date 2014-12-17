@@ -22,6 +22,23 @@ angular.module('artonline', ['ui.router'])
            // controller : 'adminLoginController'
         })
 
+.state('artistdetails', {
+            url: "/artistdetails/:id",
+            templateUrl: "partials/artistdetails.html",
+            controller : 'artistdetailsCtrl'
+        })
+
+.state('artistdetails2', {
+            url: "/artistdetails/:id",
+            templateUrl: "partials/artistdetails.html",
+            controller : 'artistdetailsCtrl'
+        })
+
+.state('artistdetails3', {
+            url: "/artistdetails/:id",
+            templateUrl: "partials/artistdetails.html",
+            controller : 'artistdetailsCtrl'
+        })
 
 })
 

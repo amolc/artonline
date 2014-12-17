@@ -39,26 +39,30 @@
       </ul>
       </div>
       <!-- images -->
+          
+
       <div class="container ABC">   
         <div class="row " >
-
+ <a href="#/artistdetails/{{artist.id}}">
           <div class="col-md-3">
             <ul style="list-style:none;" id="artistList">
-              <li ng-repeat="artist in artistdetail"> <a ng-click="artistwork(artist.id, artist.fname )">{{artist.fname}}</a></li>
+             <li ng-repeat="artist in artistdetail>"<a ng-click="artistwork(artist.id, artist.fname )">{{artist.fname}}</a> </li>
             </ul>
           </div> 
+          </a>
+          <div class="col-md-3 imgWrap"> 
+           <img src="images/Know_more.jpg" style="height:200px; width:500px ">
+           <p class="imgDescription">Know more about artist.</p> 
+           </div>
           <div class="col-md-9">
             <div id="artistartwork">
                 <h2  style="font-family: 'source_sans_prosemibold';font-size: 40px;margin-top: 10px;"> {{artistname}}</h2>
               <ul class="row" style="list-style:none;" >
+              <a href="#/artistdetails/{{artist.id}}">
                <li ng-repeat="artwork in artworks" class="col-md-4" style="border:4px;">
-                
+                <img style="max-width: 100%;width: 150px; height: 150px; padding-bottom:10px;" ng-src="./uploads/{{artwork.name}}">
                </li>
              </ul>  
-             <div class="imgWrap">
-             <img src="images/img-7.jpg">
-             <img src="images/Eng Siak Loy.jpg" class="imgDescription">
-             </div>
           </div>
           </div>
                 

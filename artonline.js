@@ -191,7 +191,7 @@ app.get('/api/collectordetails/:id',collector.collectordetails);
 app.post('/api/updatecollector',collector.updatecollector);
 
 app.post('/api/addcollection',collector.addcollection);
-
+//app.get('/api/cassie',addartist.cassie);
 
 app.listen(9000);
 console.log('Listening.. on port 9000...'); 

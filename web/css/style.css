@@ -49,7 +49,9 @@
      
 }
 
-
+.headimg{
+	text-align: center;
+}
 
 
 body{ font-size: 14px;}
@@ -72,6 +74,8 @@ hr{border-top: 1px solid;margin-top: 35px;}
 	height: 50 px;
 
 }
+
+
 .menucontain{max-width: 940px;}
 .nav-pills>li{color: #fff;font-size: 33px;font-family: 'DINCond-Bold'; }
 .nav-pills>li.active>a{color: #fff;font-size: 33px;font-family: 'DINCond-Bold'; }
@@ -123,13 +127,17 @@ background-color: #000000;
 
 #artistList li a{ text-transform: capitalize;}
 
-
+img{
+	text-align: center;
+}
 
 .imgWrap {
   position: relative;
   height: 200px;
-  width: 257px;
+  width: 200px;
 }
+
+
 
 .imgDescription {
   position: absolute;
@@ -139,7 +147,8 @@ background-color: #000000;
   right: 0;
   background: rgba(29, 106, 154, 0.72);
   color: #fff;
-
+width: 205px;
+height: 180px;
 
   visibility: hidden;
   opacity: 0;
@@ -153,4 +162,11 @@ background-color: #000000;
 .imgWrap:hover .imgDescription {
   visibility: visible;
   opacity: 1;
+}
+
+
+.artdimg{
+	text-align: center;
+	max-width: 100%;
+	padding-bottom: 20px;
 }
