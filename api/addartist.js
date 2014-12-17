@@ -21,7 +21,7 @@ exports.addetails= function (req,res){
     	   var mobileno=req.body.mobileno;
     	   var email=req.body.email;
     	    var artdes=req.body.artdes;
-            var imgname = "abcd";
+            var imgname = "abcd.png";
     	console.log(name);
       console.log(location);
     
