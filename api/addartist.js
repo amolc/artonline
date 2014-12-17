@@ -165,10 +165,11 @@ exports.artistdetails = function(req, res) {
  }; 
 
 
-exports.cassie = function(req,res){
+/*exports.cassie = function(req,res){
 var query = " SELECT * FROM tbl_artwork WHERE artist = '19' ";
 
 db.query( query, function (err, val) {  
         res.jsonp(val);
       });    
 }
+*/

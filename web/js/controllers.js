@@ -57,8 +57,8 @@ function artworkController( $rootScope, $scope, $http) {
 
 
 
-function artworkController( $rootScope, $scope, $http) {
-
+function artworkController( $rootScope, $scope, $http,$stateParams) {
+	
 	$scope.artistdetail= {};
 	$scope.uploadUrl = uploadUrl;
 	$http.get(baseURL + 'getartists').success(function(res) {
@@ -97,10 +97,12 @@ function artworkController( $rootScope, $scope, $http) {
 function artistdetailsCtrl($rootScope,$scope,$http,$stateParams)
 {
 
-	var id=$stateParams.id;			
+	var id=$stateParams.id;
+	console.log(id);
+			
 	$scope.artistdetail= {};
 	$scope.uploadUrl = uploadUrl;
-	$http.get(baseURL + 'getartists').success(function(res) {
+	$http.get(baseURL + 'getartists'+id).success(function(res) {
 		//$scope.artistdetail = res;
 		if (res.status == 'false') {
 			alert(res.message);
@@ -120,7 +122,7 @@ function artistdetailsCtrl($rootScope,$scope,$http,$stateParams)
 		artistwork( artistId , artistname );
 	}
 	var artistwork = function( artistId, artistname  ){
-		$http.get(baseURL + 'getartworkbyid/'+ artistId  ).success(function(res) {
+		$http.get(baseURL + 'getartworkbyid/'+ artistId).success(function(res) {
 			if (res.status == 'false') {
 				alert(res.message);
 			} else {
