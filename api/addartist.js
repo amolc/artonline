@@ -177,3 +177,22 @@ db.query( query, function (err, val) {
       });    
 }
 */
+exports.deleteArtist = function(req, res) {
+      var id=parseInt(req.params.id);
+    addartistCrud.destroy({'id' :id}, function (err, val) {   
+        if(parseInt(val.affectedRows)>0){
+        var resdata={
+          status:true,
+          massage:'deleted  successfuly'
+           };
+          }else{
+            var resdata={
+          status:false,
+          massage:'not found'
+           };
+            
+          }
+        res.jsonp(resdata);
+      
+    });    
+ }; 

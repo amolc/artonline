@@ -1,6 +1,3 @@
-
-  		
-
 <table class="table table-bordered">
   		<tbody>
   		<th>Artist name</th>
@@ -12,7 +9,9 @@
      <td>{{artist.fname}}</td>
       <td>{{artist.location}}</td>
       <td>{{artist.img_name}}</td>
-      <td><a href="#/app/artist/editartist/{{artist.id}}">Edit</a></td>	
+      <td><a href="#/app/artist/editartist/{{artist.id}}">Edit</a>
+      <a ng-click='del({{artist.id}})'>Delete</a>
+      </td>	
     </tr>
     </tbody>
 
