@@ -10,7 +10,7 @@ $scope.response = res;
 				if (res.status == false) {
 					alert(res.message);
 				} else {
-					$state.go("app.collector.listcollector");
+					$state.go("app.artist.listartist");
 				}
 
 	 	}).error(function() {
