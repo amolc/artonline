@@ -36,6 +36,25 @@ function newartistController( $rootScope, $scope, $http, $state) {
 		       		}		
 }
 	};
+
+				$scope.del=function(id){
+				alert(id);
+			$http.get(baseURL + 'deleteArtist/'+id).success(function(res) {
+				$scope.response = res;
+				if (res.status == false) {
+					alert(res.message);
+					
+				} else {
+				
+					$state.go('app.artist');
+				}
+			
+			}).error(function() {
+				alert("Please check your internet connection or data source..");
+			});
+				
+			};
+			
 }
 
 
@@ -201,7 +220,6 @@ function editartistController( $rootScope, $scope, $http,$stateParams,$state) {
 			});
 		}
 		};
-
 
 
 
